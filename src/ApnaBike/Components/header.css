@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://cdn.syncfusion.com/ej2/material.css');
+.flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    height: 80vh;
+    border : 0px;
+    overflow: hidden;
+}
+.dateTime {
+    display: flex;
+}
+.parentDiv {
+    display: flex;
+    flex-wrap: wrap;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.container {
+    font-family: 'Montserrat', cursive;
+}
+#bodyCard {
+    /* background-color: #37517e ; */
+    padding: 20px;
+    margin-top: 50px;
+    width: 80%;
+}
+
+.searchBtn {
+    width: 100%;
+    margin-top: 70px;
+    background-color: rgb(194, 56, 56) !important;
+}
+.cardHeader {
+    font-weight:900;
+    color: rgb(194, 81, 81);
+    margin-left: 20px;
+}
+.pickDrop {
+    color :rgb(187, 52, 52);
+    font-weight: 800;
+}
+
+
+@media screen and (max-width: 568px){
+    .flexContainer {
+        height: auto;
+        flex-direction: column-reverse;
+    }
+}

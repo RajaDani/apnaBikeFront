@@ -1,0 +1,32 @@
+.location {
+    display: flex;
+    justify-content: space-around;
+}
+.locationComponent {
+    background-color: #f0f2f2;
+}
+.location h4 {
+    font-weight: 800;
+    font-size: 19px;
+}
+
+.locationDiv {
+    display: flex;
+    flex-direction: column;
+}
+.locationDiv p{
+    font-size: 14px;
+    opacity: 0.6;
+}
+.fa-map-marker-alt {
+    padding: 1px;
+    color: rgb(204, 9, 9);
+}
+.discoverLocation h1 {
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+.btn-danger {
+    margin-top: 30px;
+    width: 200px;
+}
