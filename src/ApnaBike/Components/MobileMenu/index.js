@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Collapse, CardBody, Card } from 'reactstrap';
 import { Link } from 'react-router-dom'
+import { Button } from 'reactstrap';
 import './style.css';
 
 const menus = [
@@ -13,23 +13,23 @@ const menus = [
     {
         id: 2,
         title: 'Why ApnaBike',
-        link: '/about',
+        link: '/whyApnaBike',
     },
 
     {
         id: 3,
         title: 'Pricing',
-        link: '/case',
+        link: '/pricing',
     },
     {
         id: 4,
         title: 'FAQ',
-        link: '/event',
+        link: '/faq',
     },
     {
         id: 7,
         title: 'Contact',
-        link: '/',
+        link: '/contact',
     },
 
 ]
@@ -56,7 +56,7 @@ export default class MobileMenu extends Component {
 
     render() {
 
-        const { isMenuShow, isOpen } = this.state;
+        const { isMenuShow } = this.state;
 
         return (
             <div>
@@ -70,27 +70,13 @@ export default class MobileMenu extends Component {
                         {menus.map(item => {
                             return (
                                 <li key={item.id}>
-                                    {item.submenu ? <p onClick={this.setIsOpen(item.id)}>
-                                        {item.title}
-                                        {item.submenu ? <i className="fa fa-angle-right" aria-hidden="true"></i> : ''}
-                                    </p> : <Link to={item.link}>{item.title}</Link>}
-                                    {item.submenu ?
-                                        <Collapse isOpen={item.id === isOpen}>
-                                            <Card>
-                                                <CardBody>
-                                                    <ul>
-                                                        {item.submenu.map(submenu => (
-                                                            <li key={submenu.id}><Link className="active" to={submenu.link}>{submenu.title}</Link></li>
-                                                        ))}
-                                                    </ul>
-                                                </CardBody>
-                                            </Card>
-                                        </Collapse>
-                                        : ''}
+                                    <Link to={item.link}>{item.title}</Link>
                                 </li>
                             )
                         })}
                     </ul>
+                    <Link to="/login"><Button className="btn btn-success ml-5 mr-2">login</Button></Link>
+                    <Link to="/signup"><Button className="btn btn-secondary">Signup</Button></Link>
 
                 </div>
 

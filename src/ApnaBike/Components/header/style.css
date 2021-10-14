@@ -21,6 +21,7 @@ nav ul {
 	text-align: right;
 }
 .brandName {
+	text-decoration: none !important;
 	font-size: 17px;
 	font-weight: bold;
 	color: #444;
@@ -163,16 +164,23 @@ header.fixed .header-content {
 }
 
 @media(max-width:1200px){
-	.contact .theme-btn-s2{
-		display: none;
-	}
+	
 	.logo {
 		max-width: 250px;
 		margin-top: 20px;
 	}
-	.btn-success {
-		margin-top: 7px;
-		margin-left: -20px ;
+	.btn-success , .btn-secondary {
+		margin-top: 10px;
+	}
+	.container nav{
+		float: left;
+	}
+	.container nav ul li {
+		margin-left: -20px !important;
+	}
+	.loginSignup {
+		padding: 0px !important;
+		margin-left: -20px;
 	}
 }
 
@@ -228,46 +236,6 @@ header.fixed .header-content {
 	margin-left: 30px;
 	position: relative;
 	top: -9px;
-  }
-  
-  @media (max-width: 1380px) { 
-	  .header-style-3 .cart-search-contact .theme-btn-s2 {
-	  display: none;
-	}
-  }
-  
-  .header-style-3 .cart-search-contact button {
-	background: transparent;
-	padding: 0;
-	border: 0;
-	outline: 0;
-  }
-  
-  .header-style-3 .cart-search-contact > div {
-	float: left;
-	position: relative;
-  }
-  
-  .header-style-3 .cart-search-contact button > i {
-	font-size: 20px;
-	color: #333;
-  }
-  
-  .header-style-3 .cart-search-contact .header-search-form {
-	position: absolute;
-	width: 250px;
-	right: 0;
-	top: 68px;
-	opacity: 0;
-	visibility: hidden;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	-o-transition: all 0.5s;
-	-ms-transition: all 0.5s;
-	transition: all 0.5s;
-	-webkit-box-shadow: -2px 18px 40px -9px #999999;
-	box-shadow: -2px 18px 40px -9px #999999;
-	z-index: 10;
   }
   
   @media (max-width: 991px) {

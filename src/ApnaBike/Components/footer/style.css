@@ -36,7 +36,7 @@
 
 .wpo-site-footer .wpo-upper-footer,
 .wpo-site-footer-2 .wpo-upper-footer {
-    padding: 0 0 90px;
+    padding: 0 0 50px;
 }
 
 @media (max-width: 991px) {
@@ -127,18 +127,32 @@
 .wpo-site-footer .about-widget ul,
 .wpo-site-footer-2 .about-widget ul {
     overflow: hidden;
-    padding-top: 10px;
+    padding-top:10px;
 }
 
 .wpo-site-footer .about-widget ul li,
 .wpo-site-footer-2 .about-widget ul li {
-    font-size: 22px;
+    font-size: 20px;
     float: left;
+}
+.wpo-lower-footer p {
+    color: #fff !important;
+}
+
+.widget p {
+    font-size: 13px;
+    margin-top: 3px;
+    color: #fff !important;
+}
+.widget h6 {
+    color: #fff;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 .wpo-site-footer .about-widget ul>li+li,
 .wpo-site-footer-2 .about-widget ul>li+li {
-    margin-left: 25px;
+    margin-left: 8px;
 }
 
 .wpo-site-footer .about-widget ul a {

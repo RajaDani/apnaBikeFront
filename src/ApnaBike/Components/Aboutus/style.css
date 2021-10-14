@@ -1,0 +1,50 @@
+.container h2 {
+    font-weight: 700;
+    margin-top: 40px;
+    text-align: center;
+    color: grey ;
+    font-size: 38px;
+}
+.container p {
+    font-size: 15px;
+    line-height: inherit;
+    font-weight: 400;
+    color: #737373;
+    text-align: center;
+}
+.container h3 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 40px;
+    color: #585858;
+}
+.underline {
+    width: 70px;
+    height: 2px;
+    background: #c80910;
+    margin: 15px auto;
+    margin-bottom: 40px;
+}
+.underlineHeader {
+    width: 70px;
+    height: 2px;
+    background: #c80910;
+    margin: 15px auto;
+}
+.cityImg {
+    width: 100%;
+    padding: 30px;
+}
+.cityDiv {
+    margin-top: -50px;
+    padding: 30px; 
+}
+.cityDiv h2 {
+    text-align: center;
+    margin-top: -20px;
+    font-size: 20px;
+}
+.cities {
+    margin-left: 100px !important;
+}

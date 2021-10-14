@@ -12,10 +12,10 @@ export default function Location() {
                         <p>If you are ready to test yourself on the hardest tracks against the top athletes, feel free to contact us. It will be an experience beyond the ordinary!</p>
                         <Button className="btn btn-danger p-3 mb-5">Get Direction</Button>
                     </Col>
-                    <Col md="3">
+                    <Col xs="6" md="3">
                         <div className="locationDiv">
                             <div className="location">
-                                <span className="fas fa-map-marker-alt fa-2x"></span>
+                                <span className="fas fa-map-marker-alt fa-2x "></span>
                                 <h4>11 Evenue North</h4>
                             </div>
                             <p className="pl-4 ml-5 mb-4">120 903 9043</p>
@@ -40,7 +40,7 @@ export default function Location() {
                         </div>
                     </Col>
 
-                    <Col md="3">
+                    <Col xs="6" md="3">
                         <div className="locationDiv">
                             <div className="location">
                                 <span className="fas fa-map-marker-alt fa-2x"></span>

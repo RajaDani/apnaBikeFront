@@ -1,0 +1,61 @@
+
+#loginFlex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#loginFlex h1 {
+    font-weight: bolder;
+    margin-bottom: 1em;
+    text-align: center;
+    color: rgb(40, 76, 143);
+}
+#errorMsg {
+    font-size: 15px;
+    color: red;
+    margin-top: 7px;
+    margin-left: 4px;
+}
+.fab {
+    padding: 10px;
+    border-radius: 30px;
+    margin: 2px;
+    background-color: #f3f5fa;
+    color :rgb(87, 87, 153) ;
+}
+.fab:hover {
+    color: #fff;
+    background-color: rgb(71, 178, 228);
+}
+.signInIcons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    justify-content: center;
+}
+.signInIcons h5 {
+    margin-right: 30px;
+    margin-top: 5px;
+    font-weight: 800;
+    color: #535151;
+}
+.checkBox {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.loginFlex {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.loginBtn {
+    width: 150px;
+    background-color: rgb(49, 49, 192) !important;
+    color: #fff !important;
+}
+.loginImg {
+    width: 100%;
+    padding: 50px;
+}

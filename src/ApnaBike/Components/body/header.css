@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://cdn.syncfusion.com/ej2/material.css');
+
+.rideSelect {
+    display: flex !important;
+    flex-wrap : wrap !important;
+}
+
+.dateTime {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    height: 80vh;
+    border : 0px;
+    overflow: hidden;
+}
+.dateTime {
+    display: flex;
+}
+.parentDiv {
+    display: flex;
+    flex-wrap: wrap;
+    background-repeat: no-repeat;
+    background-size: 100% 92%;
+    margin-bottom: -50px;
+}
+
+.container {
+    font-family: 'Montserrat', cursive;
+}
+#bodyCard {
+    /* background-color: #37517e ; */
+    padding: 20px;
+    margin-top: 50px;
+    width: 80%;
+}
+
+.searchBtn {
+    width: 100%;
+    margin-top: 70px;
+    background-color: rgb(194, 56, 56) !important;
+}
+.cardHeader {
+    font-weight:900;
+    color: rgb(194, 81, 81);
+    margin-left: 20px;
+}
+.pickDrop {
+    color :rgb(187, 52, 52);
+    font-weight: 800 !important;
+}
+
+
+@media screen and (max-width : 1140px){
+    .parentDiv {
+        background-size: 100% 92% !important;
+    }
+}
+
+@media screen and (min-width : 1440px) {
+    .parentDiv {
+        background-size: 100% 75% !important;
+        margin-bottom: -250px;
+    }
+}
+
+@media screen and (max-width : 578px) {
+    .parentDiv {
+        background-size: 100% 80% !important;
+    }
+    .container .card{
+        padding: 10px !important;
+        height: 40vh !important;
+        width: 20vh !important;
+    }
+}
+@media screen and (max-width : 768px) {
+    .parentDiv {
+        background-size: 100% 70% !important;
+    }
+    .container .card{
+        
+        padding: 10px !important;
+        height: 65vh !important;
+        width: 50vh !important;
+    }
+}
+
+@media screen and (max-width : 1360px) {
+    .parentDiv {
+        background-size: 100% 92% !important;
+    }
+}
+@media screen and (min-width : 1600px){
+    .parentDiv {
+        background-size: 100% 68% !important;
+        margin-bottom: -470px;
+    }
+    .container .card{
+        height: 30vh;
+        padding: 40px !important;
+        width: 25vh ;
+    }
+    .card .cardHeader {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .flexContainer {
+        margin-left: -350px !important;
+        padding-top: 150px;
+    }
+}
