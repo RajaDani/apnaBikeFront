@@ -1,0 +1,47 @@
+.experience {
+    span {
+        align-items: center;
+        justify-content: center;
+    }
+  
+}
+
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    h6 {
+        margin-right: 35px;
+        font-size: 24px !important;
+        color: #444;
+        opacity: 0.8;
+    }
+}
+
+.experienceImages {
+    img {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+.endBorder {
+    border : 1px solid rgb(218, 216, 216);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width:576px) {
+    .socialLinks {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h6{
+            font-size: 17px !important;
+            margin-left: 40px;
+        }
+    }
+}

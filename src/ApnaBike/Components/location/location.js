@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, Col, Row } from 'reactstrap'
-import './location.css';
+import './location.scss';
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 export default function Location() {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000
+        });
+    }, [])
     return (
-        <div className='locationComponent p-4'>
+        <div className='locationComponent p-4 mb-5' data-aos="zoom-in" data-aos-once="true">
             <div className="container p-5 mt-5">
                 <Row>
                     <Col md="6" className="discoverLocation ">

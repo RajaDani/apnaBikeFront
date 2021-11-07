@@ -1,76 +1,71 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Col, Row } from 'reactstrap'
-import './style.css'
+import './style.scss'
+import CountUp from 'react-countup';
 
 const CounterSection = (props) => {
+
     return (
-        <div className='wpo-counter-area' style={{ backgroundImage: 'url(bgi.jpg)' }}>
-            <div className="container">
-                <Row className="counter">
-                    <Col xs="6" md="3" >
-                        <div className="grid">
-                            <div>
-                                <h2><span className="odometer" data-count="6200">50</span>+</h2>
-                            </div>
-                            <p>Bikes</p>
+        <div className="container-fluid counterComponent mt-5 mb-5">
+            <div className="container pt-5 pb-5 pl-5">
+                <Row className="mb-5">
+                    <Col lg="3" md="6">
+                        <div className="counterImg"><i className="fas fa-biking fa-4x"></i></div>
+                        <div className="counterSection">
+                            <CountUp start={0} end={3870} delay={0} duration={2}>
+                                {({ countUpRef }) => (
+                                    <div>
+                                        <h1 ref={countUpRef} />
+                                    </div>
+                                )}
+                            </CountUp>
+                            <p>BIKES Available</p>
                         </div>
                     </Col>
-                    <Col xs="6" md="3">
-                        <div className="grid">
-                            <div>
-                                <h2><span className="odometer" data-count="80">20</span>+</h2>
-                            </div>
-                            <p>Employees</p>
+                    <Col lg="3" md="6">
+                        <div className="counterImg"><i className="fas fa-parachute-box fa-4x"></i></div>
+                        <div className="counterSection">
+                            <CountUp start={0} end={1290} delay={0} duration={2}>
+                                {({ countUpRef }) => (
+                                    <div>
+                                        <h1 ref={countUpRef} />
+                                    </div>
+                                )}
+                            </CountUp>
+                            <p>BIKES Available</p>
                         </div>
                     </Col>
-                    <Col xs="6" md="3">
-                        <div className="grid">
-                            <div>
-                                <h2><span className="odometer" data-count="245">245</span>+</h2>
-                            </div>
-                            <p>Rides Booked</p>
+                    <Col lg="3" md="6">
+
+                        <div className="counterImg"><i className="fas fa-download fa-4x"></i></div>
+                        <div className="counterSection">
+                            <CountUp start={0} end={1420} delay={0} duration={2}>
+                                {({ countUpRef }) => (
+                                    <div>
+                                        <h1 ref={countUpRef} />
+                                    </div>
+                                )}
+                            </CountUp>
+                            <p>BIKES Available</p>
                         </div>
                     </Col>
-                    <Col xs="6" md="3">
-                        <div className="grid">
-                            <div>
-                                <h2><span className="odometer" data-count="605">60</span>+</h2>
-                            </div>
-                            <p>Reviews</p>
+                    <Col lg="3" md="6">
+                        <div className="counterImg"><i className="fas fa-users fa-4x"></i></div>
+                        <div className="counterSection">
+                            <CountUp start={0} end={6400} delay={0} duration={2}>
+                                {({ countUpRef }) => (
+                                    <div>
+                                        <h1 ref={countUpRef} />
+                                    </div>
+                                )}
+                            </CountUp>
+                            <p>BIKES Available</p>
                         </div>
                     </Col>
-                    {/* <div className="col-lg-12">
-                        <div className="wpo-counter-grids">
-                            <div className="col-6 col-md-3 grid">
-                                <div>
-                                    <h2><span className="odometer" data-count="6200">6200</span>+</h2>
-                                </div>
-                                <p>Donation</p>
-                            </div>
-                            <div className="col-6 col-md-3 grid">
-                                <div>
-                                    <h2><span className="odometer" data-count="80">80</span>+</h2>
-                                </div>
-                                <p>Fund Raised</p>
-                            </div>
-                            <div className="col-6 col-md-3 grid">
-                                <div>
-                                    <h2><span className="odometer" data-count="245">245</span>+</h2>
-                                </div>
-                                <p>Volunteers</p>
-                            </div>
-                            <div className="col-6 col-md-3 grid">
-                                <div>
-                                    <h2><span className="odometer" data-count="605">605</span>+</h2>
-                                </div>
-                                <p>Projects</p>
-                            </div>
-                        </div>
-                    </div> */}
                 </Row>
             </div>
         </div>
-    )
+    );
 }
 
 export default CounterSection;

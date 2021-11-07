@@ -6,9 +6,11 @@ import '../MobileMenu/style.css';
 import './style.css'
 
 const Header = () => {
+    // let user = localStorage.getItem('username');
+    // console.log(user);
 
     return (
-        <div className="middle-header header-style-3" >
+        <div className="middle-header header-style-3">
             <div className="container">
                 <div className="header-content">
                     <div className="row">
@@ -21,20 +23,24 @@ const Header = () => {
                         <div className="col-lg-7 d-lg-block d-none">
                             <nav>
                                 <ul>
-                                    <li><Link className="active" to="/home" title="">Home</Link></li>
-                                    <li><Link to="/whyApnaBike" title="">Why ApnaBike</Link></li>
-                                    <li><Link to="/pricing" title="">Pricing</Link></li>
-                                    <li><Link to="/faq" title="">FAQ</Link></li>
-                                    <li><Link to="/contact" title="">Contact</Link></li>
+                                    <li><Link className="navLink active" to="/home" title="">Home</Link></li>
+                                    <li><Link className="navLink" to="/whyApnaBike" title="/whyApnaBike">Why ApnaBike</Link></li>
+                                    <li><Link className="navLink" to="/pricing" title="">Pricing</Link></li>
+                                    <li><Link className="navLink" to="/faq" title="">FAQ</Link></li>
+                                    <li><Link className="navLink" to="/contact" title="">Contact</Link></li>
                                 </ul>
 
                             </nav>
                         </div>
+                        {/* {user ? <div className="col-lg-2 d-lg-block mt-3 pt-2 loginSignup">
+                            <span className="fas fa-user fa-2x"></span>
+                            <strong>{user}</strong>
+                         </div> :  */}
                         <div className="col-lg-2 d-lg-block d-none mt-3 pt-1 loginSignup" >
                             <Link to="/login"><Button className="btn btn-success mr-2">login</Button></Link>
                             <Link to="/signup"><Button className="btn btn-secondary">Signup</Button></Link>
                         </div>
-
+                        {/* } */}
                         <div className="col-md-2 col-sm-2 col-2">
                             <MobileMenu />
                         </div>

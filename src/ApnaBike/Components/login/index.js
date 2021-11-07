@@ -4,32 +4,41 @@ import { BaseUrl } from '../../BaseUrl';
 import { Col, Row, Button, Form } from 'reactstrap'
 import { useHistory } from "react-router-dom";
 import './index.css';
+const md5 = require('md5');
 
 export default function Login() {
 
-    const [authenticate, setauthenticate] = useState([]);
+    const [authenticate, setauthenticate] = useState({});
 
     const history = useHistory();
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         let email = document.getElementById('email').value;
-        let password = document.getElementById('password').value;
+        let pass = document.getElementById('password').value;
 
-        let user = fetch(BaseUrl + 'users/getuser', {
+        let password = md5(pass);
+        let userDetail = await fetch(BaseUrl + 'users/getuser', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ email: email, password: password })
-        })
-            .then(res => res.json())
-            .then(res => setauthenticate(res));
+        });
+        let user = await userDetail.json();
+        history.push("/home");
 
-        if (authenticate != '') history.push("/home");
-        else document.getElementById('errorMsg').innerHTML = 'Username or password is incorrect!';
+        // if (user) {
+        //     setauthenticate(user);
+        //     if (authenticate) {
+        //         console.log(authenticate.username);
+        //         localStorage.setItem('username', authenticate.username);
+        //         history.push("/home");
+        //     }
+        // }
+        // else document.getElementById('errorMsg').innerHTML = 'Username or password is incorrect!';
+
     }
-
 
     return (
         <div className="container" >

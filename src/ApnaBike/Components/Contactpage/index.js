@@ -29,7 +29,7 @@ const Contactpage = () => {
                                         <h2>Chakwal,Pakistan</h2>
                                         <div className="info-wrap">
                                             <div className="info-icon">
-                                                <i className="ti-world"></i>
+                                                <i className="fas fa-map-marker-alt" style={{ color: 'teal' }}></i>
                                             </div>
                                             <div className="info-text">
                                                 <span>Office Address</span>
@@ -42,7 +42,7 @@ const Contactpage = () => {
                                         <h2>danishimran889@gmail.com</h2>
                                         <div className="info-wrap">
                                             <div className="info-icon-2">
-                                                <i className="fi flaticon-envelope"></i>
+                                                <i className="fas fa-envelope-open-text"></i>
                                             </div>
                                             <div className="info-text">
                                                 <span>Official Mail</span>
@@ -55,7 +55,7 @@ const Contactpage = () => {
                                         <h2>+92 340 0576761</h2>
                                         <div className="info-wrap">
                                             <div className="info-icon-3">
-                                                <i className="ti-headphone-alt"></i>
+                                                <i className="fas fa-phone"></i>
                                             </div>
                                             <div className="info-text">
                                                 <span>Official Phone</span>

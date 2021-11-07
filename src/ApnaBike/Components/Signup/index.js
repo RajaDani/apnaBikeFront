@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { BaseUrl } from '../../BaseUrl'
 import { useHistory } from "react-router-dom";
 import './style.css';
+const md5 = require('md5')
 
 export default function Signup() {
 
@@ -47,7 +48,8 @@ export default function Signup() {
 
         let username = document.getElementById('username').value;
         let email = document.getElementById('email').value;
-        let password = document.getElementById('password').value;
+        let pass = document.getElementById('password').value;
+        let password = md5(pass);
 
         fetch(BaseUrl + 'users', {
             method: 'POST',

@@ -1,0 +1,85 @@
+.homeRent {
+    background-color: #f5f5f8;
+}
+.homePrice {
+    div {
+        padding: 1px 8px 12px 8px;
+        line-height: 1.2;
+        img {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+        p { text-align: center; margin-bottom: 0px;}
+        h4 { text-align: center; margin-top: 0px; font-weight: bold;}
+            div {
+              display: flex;
+              text-align: left;
+    
+              h6 {
+                border: 1px solid rgb(185, 182, 182);
+                width: 100%;
+                margin-top: 15px;
+                opacity: 0.3;
+                margin-bottom: 30px;
+              }
+              i {
+                font-size: 15px;
+                color: rgb(86, 136, 12);
+                margin: 0px 10px 0px 10px;
+              }
+              p {
+                font : 14px Lato, sans-serif ;
+                color: #333333;
+                margin-top: -4px !important;
+              }
+            }
+    
+            .bookBtn {
+              border: 1px solid rgb(187, 184, 184);
+              padding: 18px;
+              border-radius: 0px;
+              width: 95%;
+              margin-left: auto;
+              margin-right: auto;
+              font-size: 19px;
+              margin-bottom: 15px;
+    
+              i {
+                margin: 0px;
+                color: #444444;
+              }
+            }
+    
+    
+            button:hover {
+              background-color:#f7a63d ;
+              color: #FFFFFF;
+              border:#f7a63d;
+              i {
+                color: #FFFFFF;
+              }
+            }
+      }
+}
+
+@media screen and (max-width: 576px){
+  .homePrice {
+    width: 90vh !important;
+    margin-left: -90px;  
+  }
+
+}
+
+@media screen and (max-width: 400px){
+  .homePrice {
+    width: 80vh !important;
+    margin-left: -90px;  
+  }
+}
+
+@media screen and (max-width: 320px){
+  .homePrice {
+    width: 75vh !important;
+    margin-left: -100px;  
+  }
+}

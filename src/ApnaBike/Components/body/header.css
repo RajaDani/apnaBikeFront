@@ -1,6 +1,69 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://cdn.syncfusion.com/ej2/material.css');
 
+.SearchRideHeading {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    color: #fff !important;
+    filter: invert(10%);
+    margin-top: 90px;
+}
+.SearchRideHeading h1 {
+    font-size: 60px !important;
+    font-weight: 800;
+}
+.SearchRidePara {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 40px;
+}
+.SearchRidePara p {
+    color: #fff !important;
+    padding: 10px;
+    font-size: 17px !important;
+    filter: invert(10%);
+
+}
+.dateTimePicker {
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    padding: 7px;
+}
+.dateTimePicker select {
+    width: auto !important;
+    border: 0px !important;
+}
+
+.selectBox {
+    display: flex;
+    flex-wrap: wrap !important;
+    justify-content: center;
+    background-color: #fff;
+    padding: 10px;
+    margin-top: -20vh;
+    width: auto !important;
+}
+.calender {
+    display: flex;
+}
+.dateTimePicker div {
+    margin-left: 10px;
+}
+.selectBox p{
+    margin-top: -10px;
+    margin-left: 30px;
+    margin-right: 20px;
+    margin-bottom: -10px;
+    color: #444444 !important;
+    font-size: 17px !important;
+}
+.searchBtn {
+    margin-left: 50px;
+}
+
 .rideSelect {
     display: flex !important;
     flex-wrap : wrap !important;
@@ -8,109 +71,128 @@
 
 .dateTime {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+}
+
+.select option  {
+    margin: 20px !important;
 }
 
 .flexContainer {
     display: flex;
     flex-wrap: wrap;
-    height: 80vh;
+    height: 80vh !important;
     border : 0px;
-    overflow: hidden;
-}
-.dateTime {
-    display: flex;
-}
-.parentDiv {
-    display: flex;
-    flex-wrap: wrap;
-    background-repeat: no-repeat;
-    background-size: 100% 92%;
-    margin-bottom: -50px;
+    justify-content: center;
 }
 
-.container {
+    .bgImage {
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+.container-fluid {
     font-family: 'Montserrat', cursive;
 }
-#bodyCard {
-    /* background-color: #37517e ; */
-    padding: 20px;
-    margin-top: 50px;
-    width: 80%;
-}
 
-.searchBtn {
-    width: 100%;
-    margin-top: 70px;
-    background-color: rgb(194, 56, 56) !important;
-}
-.cardHeader {
-    font-weight:900;
-    color: rgb(194, 81, 81);
-    margin-left: 20px;
-}
 .pickDrop {
     color :rgb(187, 52, 52);
     font-weight: 800 !important;
 }
 
+@media screen and (max-width : 780px) {
 
-@media screen and (max-width : 1140px){
-    .parentDiv {
-        background-size: 100% 92% !important;
+    .SearchRideHeading{
+        margin-top: 20px !important;
+        color: #fff !important;
     }
-}
+    .SearchRideHeading h1 {
+        font-size: 50px !important;
+    }
 
-@media screen and (min-width : 1440px) {
-    .parentDiv {
-        background-size: 100% 75% !important;
-        margin-bottom: -250px;
+    .SearchRidePara p {
+        font-size: 15px !important;
     }
-}
-
-@media screen and (max-width : 578px) {
-    .parentDiv {
-        background-size: 100% 80% !important;
+   .dateTimePicker {
+       display: flex;
+       flex-direction: column;
+       margin-top: 70px;
     }
-    .container .card{
+   
+    .selectBox {
+        display: flex;
+        justify-content: center;
+        width: 60vh !important ;
+    }
+    .dateTimePicker div {
         padding: 10px !important;
-        height: 40vh !important;
-        width: 20vh !important;
-    }
-}
-@media screen and (max-width : 768px) {
-    .parentDiv {
-        background-size: 100% 70% !important;
-    }
-    .container .card{
-        
-        padding: 10px !important;
-        height: 65vh !important;
         width: 50vh !important;
     }
-}
-
-@media screen and (max-width : 1360px) {
-    .parentDiv {
-        background-size: 100% 92% !important;
+    .pickAndDrop {
+        font-weight: 800 !important;
+        padding: 8px;   
     }
-}
-@media screen and (min-width : 1600px){
-    .parentDiv {
-        background-size: 100% 68% !important;
-        margin-bottom: -470px;
+    .selectDiv {
+        margin: 10px !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 5px !important;
+        border: 1px solid green;
     }
-    .container .card{
-        height: 30vh;
-        padding: 40px !important;
-        width: 25vh ;
+    .selectDiv select {
+        margin-left: 50px;
     }
-    .card .cardHeader {
-        margin-top: 30px;
-        margin-bottom: 30px;
+    .searchBtn {
+        width: 90% !important;
+        margin-right: 40px !important;
+        margin-top: 20px !important;
     }
     .flexContainer {
-        margin-left: -350px !important;
-        padding-top: 150px;
+        height: 90vh !important;
     }
 }
+
+@media screen and (min-width : 1600px){
+    .bgImage {
+        height: 50vh !important;
+    }
+    .SearchRidePara {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-bottom: -380px !important;
+    }
+    
+}
+
+@media screen and (max-width : 1440px){
+    .bgImage {
+        height: 75vh !important;
+    }
+}
+
+@media screen and (max-width : 1399px){
+    .bgImage {
+        height: 100vh !important;
+    }
+}
+
+
+@media screen and (max-width : 600px){
+
+    .flexContainer {
+        height: 130vh !important;
+    }
+    .SearchRideHeading{
+        margin-top: 0px !important;
+        text-align: center;
+    }
+    .SearchRidePara {
+        text-align: center;
+    }
+    
+}
+
+
+
+

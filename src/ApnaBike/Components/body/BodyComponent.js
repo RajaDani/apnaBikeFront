@@ -1,25 +1,24 @@
 import React, { useState } from 'react'
 import { Row, Col } from 'reactstrap'
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
-import { TimePickerComponent } from '@syncfusion/ej2-react-calendars';
-import { Card, CardBody, Button } from 'reactstrap'
+import { Button } from 'reactstrap'
 import { BaseUrl } from '../../BaseUrl';
+import { Redirect, useHistory } from 'react-router';
 import './header.css'
+import Header from '../header';
+import AvailableBikes from '../AvailableBikes';
 
 export default function BodyComponent() {
 
     const [bookedBikes, setbookedBikes] = useState([]);
+    const history = useHistory();
 
     const searchRide = (e) => {
 
         e.preventDefault();
-        const pickUpDate = document.getElementById('pickUpDate').value;
-        const pickUpTime = document.getElementById('pickUpTime').value;
-        const dropOffDate = document.getElementById('dropOffDate').value;
-        const dropOffTime = document.getElementById('dropOffTime').value;
-
-        var bookedFrom = new Date(pickUpDate + ' ' + pickUpTime).toUTCString();
-        var bookedTill = new Date(dropOffDate + ' ' + dropOffTime).toUTCString();
+        var pickUpDate = document.getElementById('pickUpDate').value;
+        var dropOffDate = document.getElementById('dropOffDate').value;
+        var city = document.getElementById('citySelect').value;
 
         fetch(BaseUrl + 'bikes/searchbikes', {
             method: 'POST',
@@ -27,52 +26,62 @@ export default function BodyComponent() {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ bookedFrom: bookedFrom, bookedTill: bookedTill })
+            body: JSON.stringify({ bookedFrom: pickUpDate, bookedTill: dropOffDate, city: city })
         })
             .then(res => res.json())
             .then(res => setbookedBikes(res));
     }
 
     return (
-        <div className="parentDiv" style={{ backgroundImage: 'url(bgi2.jpg)' }}>
-            <div className="container mt-5" >
-                <Row className="flexContainer mt-lg-5 mt-sm-0">
-                    <Col sm="12">
-                        {/* <Card className="card p-4" >
-                            <h4 className="cardHeader "> Search Your Next Ride </h4>
-                            <CardBody>
-                                <p className='pickDrop'>Pickup</p>
-                                <form className="form-inline" onSubmit={(e) => searchRide(e)}>
-                                    <div className="dateTime ml-1">
-                                        <DatePickerComponent id="pickUpDate" placeholder="Date" min={Date()} max='31-12-2099'></DatePickerComponent>&nbsp;&nbsp;
-                                        <TimePickerComponent id="pickUpTime" placeholder="Time"></TimePickerComponent>
-                                    </div>
-                                    <p className='pickDrop mt-4'>DropOff</p>
-                                    <div className="dateTime ml-1 ">
-                                        <DatePickerComponent id="dropOffDate" placeholder="Date" min={Date()} max='31-12-2099'></DatePickerComponent>&nbsp;&nbsp;
-                                        <TimePickerComponent id="dropOffTime" placeholder="Time"></TimePickerComponent>
-                                    </div>
-                                    <Button className='searchBtn' type="submit">Search</Button>
-                                </form>
-                            </CardBody>
-                        </Card> */}
-
-                        <h4 className="cardHeader "> Search Your Next Ride </h4>
-                        <div className="rideSelect">
+        <div className="bgImage" style={{ backgroundImage: 'url(bg.jpg)' }}>
+            <Header />
+            <div className="container-fluid mt-5 flexContainer" >
+                <Row >
+                    <Col sm="12" md="5" lg="12" className="searchRide mb-3">
+                        <div className="SearchRideHeading ">
+                            <h1> Search Your Ride </h1>
+                        </div>
+                        <div className="SearchRidePara">
+                            <p> Rent from Pakistan's Largest Fleet of Motorcycles, Trusted by millions. </p>
+                        </div>
+                    </Col>
+                    <Col md="6" lg="12">
+                        <div className="selectBox container ">
                             <form className="form-inline" onSubmit={(e) => searchRide(e)}>
-                                <div className="dateTime ml-1">
-                                    <p className='pickDrop'>Pickup</p>
-                                    <DatePickerComponent id="pickUpDate" placeholder="Date" min={Date()} max='31-12-2099'></DatePickerComponent>&nbsp;&nbsp;
+                                <div className="dateTimePicker ">
+                                    <p className='pickAndDrop'>City :</p>
+                                    <div className="selectDiv">
+                                        <select className="select" id="citySelect">
+                                            <option>Chakwal</option>
+                                            <option>Rawalpindi</option>
+                                            <option>Islamabad</option>
+                                            <option>Lahore</option>
+                                            <option>Karachi</option>
+                                            <option>Peshawar</option>
+                                        </select>
+                                    </div>
 
-                                    <p className='pickDrop mt-4'>DropOff</p>
-                                    <DatePickerComponent id="dropOffDate" placeholder="Date" min={Date()} max='31-12-2099'></DatePickerComponent>&nbsp;&nbsp;
+                                    <p className='pickAndDrop'>Pickup :</p>
+                                    <div>
+                                        <DatePickerComponent className="calender" id="pickUpDate" placeholder="Date" required min={Date()} max='31-12-2099'></DatePickerComponent>
+                                    </div>
+                                    <p className='pickAndDrop'>DropOff :</p>
+                                    <div>
+                                        <DatePickerComponent className="calender" id="dropOffDate" placeholder="Date" min={Date()} max='31-12-2099'></DatePickerComponent>
+                                    </div>
+                                    <Button className='searchBtn' type="submit">Find Bike</Button>
                                 </div>
-                                <Button className='searchBtn' type="submit">Search</Button>
+
                             </form>
                         </div>
                     </Col>
                 </Row>
             </div>
+
+            {bookedBikes &&
+                bookedBikes.length > 0 &&
+                history.push({ pathname: '/availablebikes', state: { bikes: bookedBikes } })
+            }
         </div>
     )
 }

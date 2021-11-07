@@ -1,0 +1,47 @@
+$font : Montserrat , sans-serif ;
+
+.whyusComp {
+   .whyusImgDiv {
+       display: flex;
+       justify-content: center;
+       margin-bottom: 40px;
+   }
+   h4 {
+       font-family : $font !important  ;
+       font-weight: 800;
+       text-align: center;
+   }
+}
+
+.ideaContainer {
+    img {
+        width: 100%;
+    }
+    h1 {
+        font-weight: 800;
+        font-family: $font;
+    }
+    h4 {
+        font-weight: 800;
+        font-family: $font;
+        margin-bottom: 20px;
+    }
+    p{
+        text-align: left;
+    }
+
+    .whyusHeading {
+        p {
+            text-align: center;
+        }
+    }
+}
+
+.review {
+    border: 1px solid rgb(233, 228, 228);
+    opacity: 0.8;
+    margin-top: 40px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}

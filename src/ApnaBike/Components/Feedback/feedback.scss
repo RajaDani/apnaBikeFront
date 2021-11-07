@@ -1,0 +1,56 @@
+.feedback {
+    p{
+        margin-top: 15px;
+    }
+    h2 {
+        margin-top: 0px !important;
+    }
+}
+
+.clientsFeedback {
+    img {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 25px;
+    }
+    h5 {
+        text-align: center;
+        color: #444;
+        font-size: 17px;
+        font-weight: bold;
+        opacity: 0.7;
+    }
+    h4 {
+        text-align: center;
+        color: #444444;
+        font-size: 28px !important;
+        font-weight: bold;
+        color: rgb(49, 49, 77);  
+    }
+    p{
+        color: rgb(202, 8, 8);
+        font-weight: bold;
+        margin-top: 0px;
+    }
+    h6 {
+        height: 50%;
+        width: 0%;
+        border: 1px solid rgb(216, 216, 216);
+    }
+
+}
+
+.clientImg {
+    display: flex;
+    justify-content: center;
+}
+
+.review {
+    border-right: 1px solid rgb(209, 207, 207);
+}
+
+@media screen and (max-width : 450px){
+    .review {
+        border-right: 0px;
+    }
+}
