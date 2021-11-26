@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import BodyComponent from './Components/body/BodyComponent';
+import React, { useState } from 'react'
 import CounterSection from './Components/counter';
 import Header from './Components/header';
 import Footer from './Components/footer';
@@ -22,16 +21,21 @@ import RideWithus from './Components/Ridewithus';
 import Feedback from './Components/Feedback';
 import WhyusComponent from './Components/whyusComponent';
 import MiddlePart from './Components/MiddlePart';
+import Scrollbar from './Components/scrollbar';
+import Checkout from './Components/Checkout';
+import OrderPlaced from './Components/Checkout/orderPlaced';
+
 
 export default function ApnaBikeUi(props) {
-
     return (
+
         <Router>
             <div style={{ overflow: 'hidden' }}>
                 <Switch>
                     <Route exact path='/'>
                         <Header />
                         <MiddlePart />
+                        <Scrollbar />
                         <HowItWorks />
                         <RentalFeatures />
                         <HomeRent />
@@ -43,6 +47,7 @@ export default function ApnaBikeUi(props) {
                         <Feedback />
                         <Footer />
                     </Route>
+
                     <Route exact path='/login'>
                         <Login />
                     </Route>
@@ -52,6 +57,7 @@ export default function ApnaBikeUi(props) {
                     <Route exact path='/home'>
                         <Header />
                         <MiddlePart />
+                        <Scrollbar />
                         <HowItWorks />
                         <RentalFeatures />
                         <HomeRent />
@@ -66,16 +72,19 @@ export default function ApnaBikeUi(props) {
                     <Route exact path='/availablebikes'>
                         <Header />
                         <AvailableBikes />
+                        <Scrollbar />
                         <Footer />
                     </Route>
                     <Route exact path="/pricing">
                         <Header />
                         <Pricing />
+                        <Scrollbar />
                         <Footer />
                     </Route>
                     <Route exact path="/whyApnaBike">
                         <Header />
                         <WhyusComponent />
+                        <Scrollbar />
                         <Footer />
                     </Route>
                     <Route exact path="/contact">
@@ -86,6 +95,7 @@ export default function ApnaBikeUi(props) {
                     <Route exact path="/aboutus">
                         <Header />
                         <Aboutus />
+                        <Scrollbar />
                         <Footer />
                     </Route>
                     <Route exact path="/faq">
@@ -96,8 +106,20 @@ export default function ApnaBikeUi(props) {
                     <Route exact path="/selectedBike">
                         <Header />
                         <SelectedBike />
+                        <Scrollbar />
                         <Footer />
                     </Route>
+                    <Route exact path="/checkout">
+                        <Header />
+                        <Checkout />
+                        <Footer />
+                    </Route>
+                    <Route exact path="/summary">
+                        <Header />
+                        <OrderPlaced />
+                        <Footer />
+                    </Route>
+
                 </Switch>
             </div>
         </Router>

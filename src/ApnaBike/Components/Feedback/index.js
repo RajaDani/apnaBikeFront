@@ -17,7 +17,7 @@ export default function Feedback() {
             <h2 className="headerWork mt-5">Clients About Us </h2>
 
             <Row className="clientsFeedback mt-3 p-5">
-                <Col md="4" className="review">
+                <Col md="4" className="reviewBorder">
 
                     <div className="clientImg"><img className="rounded-circle " src="client1.jpg"></img></div>
 
@@ -30,7 +30,7 @@ export default function Feedback() {
 
                 </Col>
 
-                <Col md="4" className="review">
+                <Col md="4" className="reviewBorder">
 
                     <div className="clientImg"><img className="rounded-circle " src="client2.jpg"></img></div>
 

@@ -25,18 +25,20 @@ export default function Login() {
             },
             body: JSON.stringify({ email: email, password: password })
         });
-        let user = await userDetail.json();
-        history.push("/home");
 
-        // if (user) {
-        //     setauthenticate(user);
-        //     if (authenticate) {
-        //         console.log(authenticate.username);
-        //         localStorage.setItem('username', authenticate.username);
-        //         history.push("/home");
-        //     }
-        // }
-        // else document.getElementById('errorMsg').innerHTML = 'Username or password is incorrect!';
+        if (userDetail.status === 200) {
+            let user = await userDetail.json();
+            console.log(user);
+            localStorage.setItem('username', user.username);
+            localStorage.setItem('token', user.token);
+            history.push("/home");
+        }
+
+        else {
+            document.getElementById('errorMsg').innerHTML = 'Username or password is incorrect!';
+            console.log(userDetail.message);
+        }
+
 
     }
 
@@ -71,6 +73,12 @@ export default function Login() {
                     </div>
                 </Col>
             </Row>
+            {/* {
+                authenticate &&
+                authenticate.length > 0 &&
+
+                console.log(authenticate)
+            } */}
         </div>
     )
 }

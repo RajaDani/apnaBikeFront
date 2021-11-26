@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from 'reactstrap';
 import MobileMenu from '../MobileMenu';
+import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
 import '../MobileMenu/style.css';
-import './style.css'
+import './headerStyle.scss'
 
 const Header = () => {
-    // let user = localStorage.getItem('username');
-    // console.log(user);
+    let user = localStorage.getItem('username');
+    const [popover, setpopover] = useState(false);
+
+    const togglePopover = () => {
+        setpopover(!popover);
+    }
 
     return (
         <div className="middle-header header-style-3">
@@ -32,15 +36,24 @@ const Header = () => {
 
                             </nav>
                         </div>
-                        {/* {user ? <div className="col-lg-2 d-lg-block mt-3 pt-2 loginSignup">
-                            <span className="fas fa-user fa-2x"></span>
-                            <strong>{user}</strong>
-                         </div> :  */}
-                        <div className="col-lg-2 d-lg-block d-none mt-3 pt-1 loginSignup" >
-                            <Link to="/login"><Button className="btn btn-success mr-2">login</Button></Link>
-                            <Link to="/signup"><Button className="btn btn-secondary">Signup</Button></Link>
-                        </div>
-                        {/* } */}
+                        {user ? <div className="col-lg-2 userName">
+                            <span className="far fa-user" id="Popover1" onClick={() => togglePopover()} >
+                                <Popover placement="bottom" isOpen={popover} target="Popover1" toggle={() => togglePopover()} style={{ marginTop: '10px', backgroundColor: '#f7f7f7' }}>
+                                    <PopoverHeader style={{ width: '40vh', color: '#444', display: 'flex', justifyContent: 'center' }}><i className="fas fa-user p-2" ></i><h4>{user}</h4></PopoverHeader>
+                                    <PopoverBody style={{ width: "40vh" }}>
+                                        <Button className="btn btn-secondary mt-2 p-2"
+                                            onClick={() => localStorage.clear()} style={{ width: '100%', borderRadius: '30px' }}>Logout</Button>
+                                        <Link to="/signup"><Button className="btn btn-success mt-2 p-2 mb-1" style={{ width: '100%', borderRadius: '30px' }}>Create New Account ?</Button></Link>
+                                    </PopoverBody>
+                                </Popover>
+                            </span>
+                            <h4>{user}</h4>
+                        </div> :
+                            <div className="col-lg-2 d-lg-block d-none mt-3 pt-1 loginSignup" >
+                                <Link to="/login"><Button className="btn btn-success mr-2">login</Button></Link>
+                                <Link to="/signup"><Button className="btn btn-secondary">Signup</Button></Link>
+                            </div>
+                        }
                         <div className="col-md-2 col-sm-2 col-2">
                             <MobileMenu />
                         </div>

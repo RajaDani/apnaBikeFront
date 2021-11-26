@@ -45,12 +45,14 @@
     justify-content: center;
 }
 
-.review {
-    border-right: 1px solid rgb(209, 207, 207);
+.reviewBorder {
+    border: 0px ;
+    opacity: 1 ;
+    border-right: 1px solid rgb(209, 207, 207) ;
 }
 
 @media screen and (max-width : 450px){
-    .review {
-        border-right: 0px;
+    .reviewBorder {
+        border-right: 0px !important;
     }
 }

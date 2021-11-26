@@ -1,17 +1,36 @@
-import React from 'react'
-import { Col, Jumbotron, Row } from 'reactstrap'
+import React, { useEffect } from 'react'
+import { Col, Row } from 'reactstrap'
 import CounterSection from '../counter'
 import RentalFeatures from '../RentalFeatures'
 import './whyusComponent.scss'
 import TeamMember from '../team';
+import AOS from 'aos';
+import { Link } from 'react-router-dom'
+import "aos/dist/aos.css";
 
 export default function WhyusComponent() {
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000
+        });
+    }, [])
+
     return (
-        <>
-            <h1 style={{ fontWeight: 'bold', marginTop: '40px', fontFamily: 'Montserrat , sans-serif' }}>About ApnaBike</h1>
-            <h6 className="review"></h6>
-            <div className="container p-2">
-                <Row className="whyusComp">
+        <div data-aos="zoom-out" data-aos-once="true">
+
+            <div className="pricingJumbo" style={{ backgroundImage: 'url(bikefleet.jpg)' }}>
+                <img src="middle2.png" alt="icon"></img>
+                <div className="flexItems">
+                    <h1>ABOUT US</h1>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><Link className="link" to="/home">HOME</Link></li>
+                        <li class="breadcrumb-item active" aria-current="page">ABOUT US</li>
+                    </ol>
+                </div>
+            </div>
+            <div className="container mt-5">
+                <Row className="whyusComp" data-aos="zoom-out" data-aos-once="true">
                     <Col md="4" className="p-5">
                         <div className="whyusImgDiv"><img src="ab1.png"></img></div>
                         <div>
@@ -43,7 +62,7 @@ export default function WhyusComponent() {
             <CounterSection />
             <RentalFeatures />
 
-            <div className="container p-5">
+            <div className="container p-5" data-aos="zoom-in-up" data-aos-once="true">
                 <span><img src="/howworks.svg"></img></span>
                 <Row className="ideaContainer ">
                     <Col sm="12" className="whyusHeading mt-4 mb-4">
@@ -66,10 +85,10 @@ export default function WhyusComponent() {
                 </Row>
             </div>
 
-            <div className="container mb-5 pb-5">
+            <div className="container mb-5 pb-5" data-aos="flip-up" data-aos-once="true">
                 <span><img src="/howworks.svg"></img></span>
                 <TeamMember />
             </div>
-        </>
+        </div>
     )
 }

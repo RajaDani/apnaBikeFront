@@ -3,6 +3,9 @@ import { Button, Col, Row } from 'reactstrap'
 import './style.scss';
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import $ from 'jquery';
+import { Link, useHistory } from 'react-router-dom';
+
 
 export default function HowItWorks() {
     useEffect(() => {
@@ -66,7 +69,7 @@ export default function HowItWorks() {
                     <Row>
                         <Col sm="12">
                             <div className="btnDiv mt-4">
-                                <button className="btn"> Rent Your Bike <i className="fas fa-long-arrow-alt-right"></i></button>
+                                <Link to="/pricing"> <button className="btn rentYourBikeBtn"> Rent Your Bike <i className="fas fa-long-arrow-alt-right"></i></button></Link>
                             </div>
                         </Col>
                     </Row>

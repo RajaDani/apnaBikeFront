@@ -10,7 +10,7 @@ const TeamSection = (props) => {
                     <div className="col-12">
                         <div className="wpo-section-title">
                             <span style={{ color: 'rgb(122, 199, 129)', fontSize: '19px', fontWeight: 'bold', marginTop: '20px' }}>Meet Our Team</span>
-                            <h2 style={{ marginTop: '10px', color: '#444' }}>Our Expert Volunteer</h2>
+                            <h2 style={{ marginTop: '10px', color: '#444' }}>Our Expert Team</h2>
                         </div>
                     </div>
                 </div>
