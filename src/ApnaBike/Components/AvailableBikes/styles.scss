@@ -1,0 +1,94 @@
+@use '../pricing/pricing.scss';
+$font : Montserrat , sans-serif ;
+
+.disabled {
+    cursor: not-allowed !important;
+    background-color: grey !important;
+    color: #fff !important ;
+     
+    i{
+        color: #fff !important;
+    }
+}
+
+.loginModal {
+    width: 30% !important ;
+    span {
+        text-align: right;
+        opacity: 0.6;
+        margin-right: 10px;
+        padding: 5px;
+        cursor: pointer;
+    }
+    h2 {
+        text-align: center;
+        margin-top: 5px;
+        font-family: $font;
+        color: #444;
+        opacity: 0.8;
+    }
+}
+.signInFlex {
+    display: flex;
+    margin-top: 0px;
+    justify-content: space-between;
+    align-items: center;
+
+    p{
+        font-size: 15px;
+        margin-top: 14px;
+        color: #f7a63d;
+        cursor: pointer;
+    }
+}
+
+.rememberMe {
+    margin-left: -4.8em;
+    color: #444 !important;
+}
+
+.loginHeader {
+    padding: 20px;
+    border: 1px solid #f7a63d;
+    opacity: 0.8;
+    border-radius: 60px;
+    width: 21%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i{
+        color: #f7a63d ;
+    }
+}
+
+.btn-info {
+    width: 100%;
+    background-color: #f7a63d !important;
+    border : 1px solid #f7a63d !important;
+    opacity: 0.9;
+}
+
+.signinFooter {
+    color: #444;
+    text-align: center;
+    background-color: rgb(219, 216, 216);
+    padding: 20px;
+    margin-bottom: -16px;
+    margin-left: -16px;
+    margin-right: -16px;
+
+    strong {
+        color:#f7a63d ;
+        opacity: 0.9;
+        cursor: pointer;
+    }
+}
+
+.helmet {
+    input{
+        width: 50%;
+    }
+}

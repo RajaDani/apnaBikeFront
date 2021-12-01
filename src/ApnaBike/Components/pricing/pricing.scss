@@ -1,0 +1,396 @@
+$font : Montserrat , sans-serif ;
+
+.header h1 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-family: $font;
+}
+
+.allBikes {
+background-color: #FFFFFF;
+  
+  div {
+    padding: 4px 12px 12px 12px;
+    line-height: 1.2;
+    img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    p { text-align: center; margin-bottom: 0px;}
+    h4 { text-align: center; margin-top: 0px; font-weight: bold;}
+        div {
+          display: flex;
+          text-align: left;
+
+          h6 {
+            border: 1px solid rgb(185, 182, 182);
+            width: 100%;
+            margin-top: 15px;
+            opacity: 0.3;
+            margin-bottom: 30px;
+          }
+          i {
+            font-size: 15px;
+            color: rgb(86, 136, 12);
+            margin: 0px 10px 0px 10px;
+          }
+          p {
+            font : 14px Lato, sans-serif ;
+            color: #333333;
+            margin-top: -4px !important;
+          }
+        }
+
+        button {
+          border: 1px solid rgb(187, 184, 184);
+          padding: 18px;
+          border-radius: 0px;
+          width: 95%;
+          margin-left: auto;
+          margin-right: auto;
+          font-size: 19px;
+          margin-bottom: 15px;
+
+          i {
+            margin: 0px;
+            color: #444444;
+          }
+        }
+
+
+        button:hover {
+          background-color:#f7a63d ;
+          color: #FFFFFF;
+          border:#f7a63d;
+          i {
+            color: #FFFFFF;
+          }
+        }
+  }
+}
+
+.rentRow {
+  display: flex;
+  padding: 20px !important;
+  justify-content: left !important;
+  align-items: center;
+
+  h5{
+    color: #f7a63d;
+    margin-left: 10px;
+    font-weight: bold;
+    font: Montserrat, sans-serif ;
+  }
+  strong {
+    font : 14px Montserrat, sans-serif ;
+    font-weight: bold;
+
+  }
+}
+
+.priceCard {
+  border-radius: 0px !important;
+  transition: transform .2s;
+
+  img {
+    height: 220px;
+  }
+}
+.priceCard:hover {
+  transform: scale(1.03);
+  -webkit-box-shadow: 0 0 10px rgb(197, 185, 185);
+  box-shadow: 0 0 10px rgb(185, 181, 181);
+  cursor: pointer;
+}
+
+.pricingComponent {
+  position: relative;
+}
+
+.priceCard {
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 999;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 1%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 98%;
+  width: 98%;
+  opacity: 0 ;
+  cursor: pointer;
+  transition: .5s ease;
+  background-color: #333333;
+
+}
+
+.selectedDatesOrder {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 100%;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  h5 {
+    text-align: left !important;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+  }
+
+    p{
+      color: #fff !important;
+      padding: 12px; 
+      text-align: left !important;
+      font-size: 16px !important;
+      border-bottom: 2px solid rgb(170, 161, 161);
+      margin-top: 10px !important;
+    } 
+}
+
+.locationDropoff{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgb(170, 161, 161);
+  align-items: center;
+  padding: 10px !important;
+
+  p{
+    padding: 0px; 
+    border-bottom: 0px solid;
+    font: 15px $font;
+  }
+}
+
+.cancelBtn {
+  color: #fff !important;
+}
+
+
+.dateAndPrice {
+  display: flex;
+  flex-direction: column;
+
+  i{
+    text-align: right !important;
+  }
+  
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h3{
+    text-align: left !important;
+  }
+  div {
+    align-items: center;
+    div {
+      align-items: center;
+      strong{
+        margin-left: -10px !important;
+        color: #fff !important;
+      }
+    }
+  }
+  button {
+    background-color: #f7a63d;
+    color: #fff;
+    border : 0px !important;
+  }
+  button:hover {
+    background-color: rgb(53, 145, 53) !important;
+    color: #fff;
+    border : 0px !important;
+  }
+  h5 {
+    padding-top: 10px;
+    font: 20px $font ;
+    color : #fff !important;
+
+  }
+  strong {
+    font: 18px $font;
+    color : #fff !important;
+    margin-left: -13px ;
+  }
+}
+
+.datesAvailable {
+  justify-content: left !important;
+  margin-top: 10px;
+
+  p{
+    border-bottom: 0px;
+    color: rgb(95, 184, 95) !important;
+    margin-left: -10px !important;
+  }
+ 
+}
+
+.helmet {
+  margin-left: -30px;
+}
+
+.pricingJumbo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -50px;
+  border-bottom-left-radius:25%;
+  border-bottom-right-radius:25%;
+  overflow: hidden;
+
+  position: relative;
+  text-align: center;
+  color: white;
+
+
+  img {
+    height: 66vh ;
+    width: 55% !important;
+  }
+
+  .flexItems {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h1{
+      font-weight: bold !important;
+      font-family: $font;
+      font-size: 60px;
+    }
+  }
+}
+
+
+
+.breadcrumb {
+  display: flex;
+  justify-content: center;
+  background-color: transparent !important ;
+  font-size: 19px;
+  margin-top: -17px;
+
+  li{
+    color: #FFFFFF !important;
+    
+  }
+  .link{
+    list-style: none !important;
+    text-decoration: none !important;
+    color: #FFFFFF;
+  }
+}
+
+.loader {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@media screen and (max-width : 1440px){
+  .flexItems{
+    h1{
+    font-size: 60px !important;
+    }
+  }
+  .pricingJumbo {
+    img {
+      width: 55% !important;
+      height: 58vh !important;
+    }
+  }
+}
+
+@media screen and (min-width : 1600px){
+  .flexItems{
+    h1{
+    font-size: 90px !important;
+    }
+  }
+  .pricingJumbo {
+    img {
+      width: 55% !important;
+      height: 45vh !important;
+    }
+  }
+
+  .breadcrumb {
+    display: flex;
+    justify-content: center;
+    background-color: transparent !important ;
+    font-size: 26px;
+  }  
+}
+
+@media screen and (max-width : 1024px){
+  .flexItems{
+    h1{
+    font-size: 45px !important;
+    }
+  }
+  .pricingJumbo {
+    img {
+      width: 55% !important;
+      height: 55vh !important;
+    }
+  }
+}
+
+@media screen and (max-width : 768px){
+ 
+  .flexItems{
+    h1{
+    font-size: 35px !important;
+    }
+  }
+  .pricingJumbo {
+    img {
+      width: 65% !important;
+    }
+  }
+
+}
+
+
+@media screen and (max-width : 568px){
+ 
+  .flexItems{
+    h1{
+    font-size: 25px !important;
+    }
+  }
+  .pricingJumbo {
+    img {
+      width: 90% !important;
+      height: 45vh !important;
+    }
+  }
+  .breadcrumb {
+    display: flex;
+    justify-content: center;
+    background-color: transparent !important ;
+    font-size:  9px;
+  }  
+
+}
