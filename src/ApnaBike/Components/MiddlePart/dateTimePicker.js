@@ -7,13 +7,12 @@ import { useHistory } from 'react-router-dom';
 
 export default function DateTimePicker() {
 
-    const [bookedBikes, setbookedBikes] = useState([]);
     const [city, setcity] = useState([])
     const history = useHistory();
     var difference;
 
     const getCities = async () => {
-        let cities = await fetch(BaseUrl + 'city/getcities');
+        let cities = await fetch(BaseUrl + 'client/city/getcities');
         if (cities.status === 200) {
             let city = await cities.json();
             setcity(city);
@@ -32,22 +31,8 @@ export default function DateTimePicker() {
         sessionStorage.setItem('dropoff', dropoff);
         sessionStorage.setItem('city', city);
 
-        difference = Math.floor(((Date.parse(dropoff) - Date.parse(pickUpDate)) / 86400000) + 1);
+        history.push(`/availablebikes/pickUpDate=${pickUpDate}/dropoff=${dropoff}/city=${city}`);
 
-        let bikes = await fetch(BaseUrl + `bikes/searchbikes?bookedFrom=${pickUpDate}&bookedTill=${dropoff}&city=${city}`)
-
-        if (bikes.status === 200) {
-            let availablebikes = await bikes.json();
-            history.push({ pathname: '/availablebikes', state: { bikes: availablebikes.Bikes, booked: availablebikes.bookedBikes, totalDays: difference } })
-        }
-        else {
-            alert(bikes.message);
-        }
-
-    }
-
-    function getCity(e) {
-        alert('hello')
     }
 
     useEffect(() => {
@@ -64,11 +49,11 @@ export default function DateTimePicker() {
                             <div className="dateTimeBlock">
                                 <p>City </p>
                                 <div className="citySelect mr-3">
-                                    <select id="citySelect" className="from-control" required>
+                                    <select id="citySelect" required>
                                         <option>Select</option>
                                         {city.map(e =>
                                             <>
-                                                <option name={e.id_city} onClickCapture={() => getCity(e)}>{e.city_name}</option>
+                                                <option>{e.city_name}</option>
                                             </>
                                         )}
                                     </select>

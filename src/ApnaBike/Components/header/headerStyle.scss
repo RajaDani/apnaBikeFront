@@ -2,7 +2,7 @@
 
 .logo {
 	max-width: 250px;
-	margin-top: 14px;
+	margin-top: 3px;
 } 
 
 $font : Montserrat , sans-serif ;
@@ -13,6 +13,26 @@ $font : Montserrat , sans-serif ;
 .navLink {
 	color: #444 !important;
 }
+#smallHeader {
+	z-index : 9999 ;
+}
+
+.popoverHeaderSmall {
+	color: #444 ;
+	display: flex ;
+	justify-content: center ;
+	overflow: hidden;
+
+}
+.popoverBodySmall {
+	width: auto;
+}
+
+.userSmall {
+	margin-left: -30px;
+	margin-top: 25px;
+}
+
 .userName {
 	display: flex ;
 	justify-content: center;
@@ -151,6 +171,18 @@ nav ul li a.active {
 // 	text-decoration: none;
 // }
 
+.popover{
+	width: auto !important; 
+}
+.popoverHeader {
+	color: #444 ;
+	display: flex ;
+	justify-content: center ;
+	overflow: hidden;
+}
+.popoverBody {
+	width: 250px ;
+}
 
 header.fixed,
 header.fixed.style2,
@@ -199,7 +231,7 @@ header.fixed .header-content {
 	
 	.logo {
 		max-width: 250px;
-		margin-top: 20px;
+		// margin-top: 20px;
 	}
 	.btn-success , .btn-secondary {
 		margin-top: 10px;
@@ -223,7 +255,7 @@ header.fixed .header-content {
 		padding-bottom: 20px;
 	}
 	.header-content .contact-info-1 span {
-		margin-right: 20px;
+		// margin-right: 20px;
 		margin-top: 0;
 	}
 	
@@ -234,10 +266,11 @@ header.fixed .header-content {
 	.header-content .contact-info-1 span{
 		display: none;
 	}
+	.userSmall {
+		margin-left: -75px;
+		margin-top: 25px;
+	}
 }
-
-
-
 
 .header-style-3 .cart-search-contact {
 	margin-top: 30px;
@@ -248,6 +281,7 @@ header.fixed .header-content {
 	box-shadow: 0px 5px 14.25px 0.75px rgba(12, 105, 184, 0.1);
 	position: relative;
 	z-index: 9999;
+	height: 80px !important;
 }
   
   @media (max-width: 991px) {
@@ -255,6 +289,9 @@ header.fixed .header-content {
 	  right: 0px;
 	  top: 0;
 	  padding-top: 0;
+	}
+	.userLarge {
+		display: none;
 	}
   }
   
@@ -280,6 +317,9 @@ header.fixed .header-content {
 	.header-style-3 .cart-search-contact .header-search-form {
 	  top: 55px;
 	  right: 15px;
+	}
+	.logo {
+		margin-top: 3px !important;
 	}
   }
   
@@ -369,6 +409,12 @@ header.fixed .header-content {
   @media (max-width: 767px) {
 	.header-style-3 .cart-search-contact .mini-cart-content {
 	  top: 55px;
+	}
+	.popoverBody{
+		width: auto !important;
+	}
+	.header-content {
+		height: 100px !important;
 	}
   }
   
@@ -489,12 +535,22 @@ header.fixed .header-content {
 	nav ul ul ul {
 		left: -100%;
 	}
+	.popoverBody {
+		width: 330px !important;
+	}
   }
 
 
   @media(max-width:1200px){
 	nav ul li a {
 		display: inline-block;
-		padding: 40px 20px;
+		padding: 0px 20px;
+	}
+  }
+
+  @media screen and(max-width : 375px){
+	.userSmall {
+		margin-left: -90px;
+		margin-top: 25px;
 	}
   }

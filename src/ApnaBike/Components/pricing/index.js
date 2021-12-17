@@ -10,6 +10,7 @@ import "aos/dist/aos.css";
 import DateTimePicker from '../MiddlePart/dateTimePicker';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
+const md5 = require('md5');
 
 function Pricing() {
 
@@ -32,19 +33,50 @@ function Pricing() {
     let totalBill;
     let token = localStorage.getItem('token');
 
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        let email = document.getElementById('email').value;
+        let pass = document.getElementById('password').value;
+
+        let password = md5(pass);
+        let userDetail = await fetch(BaseUrl + 'users/getuser', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: email, password: password })
+        });
+        let result = await userDetail.json();
+
+        if (userDetail.status === 200) {
+            console.log(result);
+            localStorage.setItem('username', result.username);
+            localStorage.setItem('token', result.token);
+            localStorage.setItem('userId', result.userId);
+            toggleSigninModal();
+        }
+        else {
+            alert('Error');
+            document.getElementById('errorMsg').innerHTML = 'Username or password is incorrect!';
+        }
+    }
+
+
     const verifyUser = async (bikeId, e) => {
 
         if (!token) toggleSigninModal();
 
         else {
-            let userToAuthenticate = await fetch(BaseUrl + `users/verifytoken`, {
+            let userToAuthenticate = await fetch(BaseUrl + `client/users/verifytoken`, {
                 headers: { "Authorization": `Bearer ${token}` }
             })
 
             if (userToAuthenticate.status === 200) {
                 let authenticatedUser = await userToAuthenticate.json();
 
-                let bike = await fetch(BaseUrl + 'bikes/getbike/' + bikeId + '');
+                let bike = await fetch(BaseUrl + 'client/bikes/getbike/' + bikeId + '');
                 let bikeDetail = await bike.json();
                 let bill = e.target.value;
                 history.push({ pathname: '/checkout', state: { userId: authenticatedUser.userId, bikeDetail: bikeDetail, userEmail: authenticatedUser.email, subTotal: bill, helmet: helmet } });
@@ -144,7 +176,7 @@ function Pricing() {
                                 <h5>Rs.{bike.Rent.daily_rent} / Day</h5>
                             </div>
                             {bike.status === 1 ?
-                                <button className="btn disabled" onClick={(e) => toggleBookOrder(bike.bike_id)}>Book now <i className="fas fa-long-arrow-alt-right"></i></button>
+                                <button className="btn disabled">Book now <i className="fas fa-long-arrow-alt-right"></i></button>
                                 :
                                 <button className="btn" onClick={(e) => toggleBookOrder(bike.bike_id)}>Book now <i className="fas fa-long-arrow-alt-right"></i></button>
                             }
@@ -208,8 +240,6 @@ function Pricing() {
             </div>
 
             <DateTimePicker />
-
-
             <div className="container mt-5">
                 {function () {
                     while (bikes.length < 1) {
@@ -243,14 +273,14 @@ function Pricing() {
                     </div>
                     <h2>Sign In</h2>
                     <ModalBody >
-                        <Form className="pl-4 pr-4 mt-1">
+                        <Form className="pl-4 pr-4 mt-1" onSubmit={(e) => handleSubmit(e)}>
                             <FormGroup>
                                 <Input type="email" placeholder="Apnabike@gmail.com"></Input>
                             </FormGroup>
                             <FormGroup>
                                 <Input type="password" placeholder="Password.."></Input>
                             </FormGroup>
-                            <Button className="btn btn-info">Login</Button>
+                            <Button type='submit' className="btn btn-info">Login</Button>
                             <div className="signInFlex">
                                 <Checkbox></Checkbox><p className="rememberMe">Remember Me</p>
                                 <p>Forgot Password ?</p>
@@ -260,7 +290,7 @@ function Pricing() {
                     </ModalBody>
                 </Modal>
 
-                <Modal isOpen={signupModal} toggle={toggleSignupModal} className="loginModal">
+                {/* <Modal isOpen={signupModal} toggle={toggleSignupModal} className="loginModal">
                     <span className="fas fa-times mt-1 " onClick={toggleSignupModal}></span>
                     <div className="loginHeader">
                         <i className="fas fa-user fa-2x"></i>
@@ -291,7 +321,7 @@ function Pricing() {
                             <Button className="btn btn-info mt-3">Signup</Button>
                         </Form>
                     </ModalBody>
-                </Modal>
+                </Modal> */}
             </div>
         </div>
     )

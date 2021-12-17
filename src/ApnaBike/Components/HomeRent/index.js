@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Row, Col, Card } from 'reactstrap';
 import './homeRent.scss'
 import AOS from 'aos';
 import "aos/dist/aos.css";
-
 import Slider from "react-slick";
 
-
 export default function HomeRent() {
+
+    const [bikes, setBikes] = useState([]);
 
     useEffect(() => {
         AOS.init({
@@ -23,7 +23,6 @@ export default function HomeRent() {
         speed: 700,
         autoplaySpeed: 2000,
         cssEase: "linear",
-        // speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
         initialSlide: 0,

@@ -20,7 +20,7 @@ export default function BodyComponent() {
         var dropOffDate = document.getElementById('dropOffDate').value;
         var city = document.getElementById('citySelect').value;
 
-        fetch(BaseUrl + 'bikes/searchbikes', {
+        fetch(BaseUrl + 'client/bikes/searchbikes', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

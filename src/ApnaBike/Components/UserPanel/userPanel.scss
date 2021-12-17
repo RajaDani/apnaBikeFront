@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@1,500&display=swap');
+$font : 'Work Sans', sans-serif;
+
+.sidebar {
+    // margin: 0;
+    // padding: 0;
+    width: 300px !important;
+    background-color: #f8f8f8;
+    position: fixed;
+    height: 100vh !important;
+    overflow: auto;
+    font-family: $font;
+    border-radius: 0px 6px 6px 0px; 
+}
+
+
+//     p{
+//         border: 1px solid rgb(231, 231, 231);
+//         padding-top: -3px;
+//         opacity: 0.6;
+//         margin-left: 10px;
+//         margin-right: 10px;
+//     }
+
+//     div {
+//         display: flex;
+//         margin-top: 10px;
+//         padding: 10px;
+//         justify-content: center;
+//         color: #ffffff;
+        
+//         img{
+//             width: 60px;
+//             height: 45px;
+//         }
+//         h4 {
+//             margin-left: 10px;
+//             margin-top: 5px;
+//             color: #444;
+//             opacity: 0.8;
+//         }
+//         h3 {
+//             color: rgb(122, 122, 122);
+//             margin-left: -100px;
+//         }
+//     }
+//   }
+
+//   .dashboard-content {
+//       background-color: red !important;
+//       width: 300px;
+//       height: 300px;
+//   }
+
+//   .userInfo{
+//       margin-left: 20px;
+//       padding: 5px !important;
+//       align-items: center;
+//       margin-top: 0px !important;
+//       justify-content: flex-start !important;
+//       img{
+//           border-radius: 8px;
+//           height: 45px !important;
+//           width: 50px !important;
+//       }
+//   }
+  
+//   .sidebar a {
+//     display: block;
+//     color: black;
+//     padding: 16px;
+//     text-decoration: none;
+//   }
+   
+//   .sidebar a.active {
+//     background-color: #04AA6D;
+//     color: white;
+//   }
+  
+//   .sidebar a:hover:not(.active) {
+//     background-color: #555;
+//     color: white;
+//   }
+  
+//   div.content {
+//     margin-left: 270px;
+//     padding: 1px 16px;
+//     height: 1000px;
+//   }
+  
+//   @media screen and (max-width: 700px) {
+//     .sidebar {
+//       width: 100%;
+//       height: auto;
+//       position: relative;
+//     }
+//     .sidebar a {float: left;}
+//     div.content {margin-left: 0;}
+//   }
+
+// .sidebar {
+//     height: 100vh !important;
+//     font-family: $font;
+//     box-shadow: 1px solid #e27c7c !important;
+// }
+
+.sidebarHeader {
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    color: rgb(109, 109, 109);
+    font-weight: 500 !important;
+
+    img {
+        width: 55px;
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 8px;
+    }
+    h4{
+       padding-top: 5px;
+       color: rgb(109, 109, 109);
+    }
+}
+.menu {
+    // margin-right: 100px;
+    padding: 0px;  
+    font-family: $font;
+}
+.menu-item {
+       display: flex;
+       justify-content: left;
+       margin-top: 15px;
+       font-family: $font !important;
+       color: rgb(109, 109, 109);
+}
+.active {
+       color: rgb(238, 113, 133) !important;
+}
+
+i:hover {
+    color: rgb(238, 113, 133) !important;
+}
+
+.breadcrumbDiv {
+    margin-left: -50px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(238, 113, 133);
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding: 5px;
+
+}
+
+.breadcrumb-item {
+    padding-top: 15px;
+}
+
+
+.activeBookings{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px !important ;
+    color: #ffffff;
+}
+
+.moreinfo {
+    background-color: rgb(101, 101, 221) ;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    p{
+        margin-top: 4px;
+        margin-bottom: 4px;
+        color: #ffff;
+    }
+}
+
+.moreinfo2{
+    background-color: rgb(25, 102, 29) !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    p{
+        margin-top: 4px;
+        margin-bottom: 4px;
+        color: #ffff;
+    }
+}
+

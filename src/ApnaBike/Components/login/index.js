@@ -11,13 +11,14 @@ export default function Login() {
     const [authenticate, setauthenticate] = useState({});
 
     const history = useHistory();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         let email = document.getElementById('email').value;
         let pass = document.getElementById('password').value;
 
         let password = md5(pass);
-        let userDetail = await fetch(BaseUrl + 'users/getuser', {
+        let userDetail = await fetch(BaseUrl + 'client/users/getuser', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -25,21 +26,19 @@ export default function Login() {
             },
             body: JSON.stringify({ email: email, password: password })
         });
+        let result = await userDetail.json();
 
         if (userDetail.status === 200) {
-            let user = await userDetail.json();
-            console.log(user);
-            localStorage.setItem('username', user.username);
-            localStorage.setItem('token', user.token);
+            console.log(result);
+            localStorage.setItem('username', result.username);
+            localStorage.setItem('token', result.token);
+            localStorage.setItem('userId', result.userId);
             history.push("/home");
         }
 
         else {
             document.getElementById('errorMsg').innerHTML = 'Username or password is incorrect!';
-            console.log(userDetail.message);
         }
-
-
     }
 
     return (
@@ -73,12 +72,6 @@ export default function Login() {
                     </div>
                 </Col>
             </Row>
-            {/* {
-                authenticate &&
-                authenticate.length > 0 &&
-
-                console.log(authenticate)
-            } */}
         </div>
     )
 }

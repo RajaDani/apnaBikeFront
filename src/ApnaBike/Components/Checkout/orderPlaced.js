@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Col, Row } from 'reactstrap';
 import './placeOrder.scss';
 import { Link, useHistory } from 'react-router-dom';
@@ -6,6 +6,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 export default function OrderPlaced() {
     const history = useHistory();
+    const [bike, setbike] = useState(history.location.state.bike);
 
     return (
         <div className="container checkout">
@@ -29,7 +30,7 @@ export default function OrderPlaced() {
                         </Col>
                         <Col sm="3">
                             <p>Total :</p>
-                            <div className="orderSummary"> <strong>{history.location.state.subTotal + history.location.state.helmet}</strong></div>
+                            <div className="orderSummary"> <strong>{history.location.state.total}</strong></div>
                         </Col>
                         <Col sm="3">
                             <p>Payment Method :</p>
@@ -46,19 +47,20 @@ export default function OrderPlaced() {
                     </div>
 
                     <div className="description">
-                        {history.location.state.bike.map(bikeDetail =>
-                            <div className="productDetails">
-                                <p>Name : {bikeDetail.company}</p>
-                                <p>Start Date : {sessionStorage.getItem('pickup')}</p>
-                                <p>End Date :  {sessionStorage.getItem('dropoff')}</p>
-                                <p>City :  {sessionStorage.getItem('city')}</p>
-                            </div>
-                        )}
-                        <div><strong>Rs.{history.location.state.subTotal}</strong></div>
+                        {history.location.state &&
+                            bike.map(bikeDetail =>
+                                <div className="productDetails">
+                                    <p>Name : {bikeDetail.company}</p>
+                                    <p>Start Date : {sessionStorage.getItem('pickup')}</p>
+                                    <p>End Date :  {sessionStorage.getItem('dropoff')}</p>
+                                    <p>City :  {sessionStorage.getItem('city')}</p>
+                                </div>
+                            )}
+                        <div><strong>Rs.{history.location.state.subtotal}</strong></div>
                     </div>
                     <div>
                         <p>Subtotal :</p>
-                        <strong>Rs.{history.location.state.subTotal}</strong>
+                        <strong>Rs.{history.location.state.subtotal}</strong>
                     </div>
                     <div>
                         <p>Helmets :</p>
@@ -71,7 +73,7 @@ export default function OrderPlaced() {
                     </div>
                     <div>
                         <p>Total :</p>
-                        <strong>{history.location.state.subTotal + history.location.state.helmet}</strong>
+                        <strong>{history.location.state.total}</strong>
                     </div>
                 </Col>
                 <Link to="/home" style={{ marginLeft: 'auto', marginRight: 'auto' }}> <Button className="btn btn-danger">Back To Home</Button> </Link>

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from 'reactstrap';
+import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
 import './style.css';
 
 const menus = [
@@ -34,7 +34,6 @@ const menus = [
 
 ]
 
-
 export default class MobileMenu extends Component {
 
     state = {
@@ -55,17 +54,25 @@ export default class MobileMenu extends Component {
     }
 
     render() {
-
         const { isMenuShow } = this.state;
 
         return (
             <div>
-                <div className={`mobileMenu ${isMenuShow ? 'show' : ''}`}>
-                    {/* <div className="clox" onClick={this.menuHandler}>Close Me</div> */}
+                <div id="smallHeader" className={`mobileMenu ${isMenuShow ? 'show' : ''}`}>
+                    <span className="fas fa-times mt-2 mr-2 float-right " onClick={() => this.menuHandler()}></span>
                     <div className="d-flex pt-3 pl-3">
                         <img src="/logo.png" alt="" width="65" height="40" />
                         <p className='mt-2 ml-2'>ApnaBike</p>
                     </div>
+
+                    {this.props.user ? <div className="col-lg-2 userName mt-3">
+                        <h4>{this.props.user}</h4>
+                    </div> :
+                        <div className="col-lg-2 d-lg-block d-none mt-3 pt-1 loginSignup" >
+                            <Link to="/login"><Button className="btn btn-success mr-2">login</Button></Link>
+                            <Link to="/signup"><Button className="btn btn-secondary">Signup</Button></Link>
+                        </div>
+                    }
                     <ul className="responsivemenu">
                         {menus.map(item => {
                             return (
@@ -75,9 +82,6 @@ export default class MobileMenu extends Component {
                             )
                         })}
                     </ul>
-                    <Link to="/login"><Button className="btn btn-success ml-5 mr-2">login</Button></Link>
-                    <Link to="/signup"><Button className="btn btn-secondary">Signup</Button></Link>
-
                 </div>
 
                 <div className="showmenu" onClick={this.menuHandler}><i className="fa fa-bars" aria-hidden="true"></i></div>

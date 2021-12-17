@@ -1,8 +1,7 @@
 import React from 'react'
-import { Col, Row, Button } from 'reactstrap'
-import { Link } from 'react-router-dom'
+import { Col, Row, Input, Form, Button } from 'reactstrap'
 import { BaseUrl } from '../../BaseUrl'
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import './style.css';
 const md5 = require('md5')
 
@@ -14,8 +13,8 @@ export default function Signup() {
         let validator = e.target.value;
 
         if (e.target.id === 'username') {
-            if (validator.length > 0 && validator.length < 3) document.getElementById('usernameValidator').innerHTML = 'Username must be greater than 3 characters';
-            else if (validator.length > 20) document.getElementById('usernameValidator').innerHTML = 'Username must be less than 20 characters';
+            if (validator.length > 0 && validator.length < 3) document.getElementById('usernameValidator').innerHTML = 'Name must be greater than 3 characters';
+            else if (validator.length > 20) document.getElementById('usernameValidator').innerHTML = 'Name must be less than 20 characters';
             else document.getElementById('usernameValidator').innerHTML = '';
         }
         else if (e.target.id === "email") {
@@ -24,79 +23,221 @@ export default function Signup() {
             if (e.target.value !== '' && !validate) document.getElementById('emailValidator').innerHTML = 'Invalid Email Address!';
             else document.getElementById('emailValidator').innerHTML = ''
         }
-        else if (e.target.id === 'password') {
-            if (validator.length > 0 && validator.length < 6) document.getElementById('passwordValidator').innerHTML = 'Password must be greater than 6 characters';
+        else if (e.target.id === 'confirmPassword') {
+            let pass1 = document.getElementById('password').value;
+            let pass2 = document.getElementById('confirmPassword').value;
+            if (pass1 !== pass2) document.getElementById('passwordValidator').innerHTML = 'Passwords not matched';
             else document.getElementById('passwordValidator').innerHTML = '';
-            localStorage.setItem('password', validator);
+        }
+        else if (e.target.id === 'cnic') {
+            if (validator.length !== 14) document.getElementById('cnicValidator').innerHTML = 'CNIC must be of 14 digits';
+            else document.getElementById('cnicValidator').innerHTML = '';
+        }
+        else if (e.target.id === 'passport') {
+            if (validator.length !== 9) document.getElementById('passportValidator').innerHTML = 'Passport must be of 9 digits';
+            else document.getElementById('passportValidator').innerHTML = '';
+        }
+        else if (e.target.id === 'mobile') {
+            if (validator.length !== 11) document.getElementById('mobileValidator').innerHTML = 'Mobile must be of 11 digits';
+            else document.getElementById('mobileValidator').innerHTML = '';
         }
     }
 
-    const confirmPassword = (e) => {
-        let confirm = e.target.value;
-        let value = localStorage.getItem('password');
+    async function submitHandler(e) {
 
-        if (confirm !== value) document.getElementById('confirmValidator').innerHTML = 'Password does not matched!';
-        else {
-            document.getElementById('confirmValidator').innerHTML = '';
-            localStorage.clear();
-        };
-
-    }
-
-
-    const createNewUser = () => {
-
+        e.preventDefault();
+        let firstname = document.getElementById('firstname').value;
+        let lastname = document.getElementById('lastname').value;
         let username = document.getElementById('username').value;
         let email = document.getElementById('email').value;
+        let cnic = document.getElementById('cnic').value;
+        let mobile_no = document.getElementById('mobile_no').value;
+        let passport = document.getElementById('passport').value;
         let pass = document.getElementById('password').value;
         let password = md5(pass);
 
-        fetch(BaseUrl + 'users', {
+        let newUser = await fetch(BaseUrl + 'client/users', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ username: username, email: email, password: password })
+            body: JSON.stringify({
+                firstname: firstname, lastname: lastname, username: username,
+                email: email, password: password, cnic: cnic, mobile_no: mobile_no, passport: passport
+            })
         });
 
-        history.push("/home");
-
+        let result = await newUser.json();
+        if (newUser.status === 200) {
+            console.log(result);
+            localStorage.setItem('username', result.username);
+            localStorage.setItem('token', result.token);
+            localStorage.setItem('userId', result.userId);
+            history.push("/home");
+        }
+        else alert(result.message);
     }
 
     return (
         <div className="container">
             <Row className="formElement">
-                <Col md="8">
-                    <img src="/loginImg.svg" alt="login" className="loginImg"></img>
-                </Col>
-                <Col md="4">
+                <Col md="6">
                     <div>
                         <h2>Signup to Join!</h2>
                     </div>
-                    <div>
-                        <input id="username" className="form-control" type="text" placeholder="Username.." onBlur={(e) => validation(e)} autoFocus required></input>
-                        <p id="usernameValidator" className="validator"></p>
-                    </div>
-                    <div >
-                        <input id="email" className="form-control mt-4" type="text" placeholder="Email Address.." onBlur={(e) => validation(e)} required></input>
-                        <p id="emailValidator" className="validator"></p>
-                    </div>
-                    <div >
-                        <input id="password" className="form-control mt-4" type="password" placeholder="Password.." onBlur={(e) => validation(e)} required></input>
-                        <p id="passwordValidator" className="validator"></p>
-                    </div>
-                    <div >
-                        <input className="form-control mt-4" type="password" placeholder="Confirm Password.." onBlur={(e) => confirmPassword(e)} required></input>
-                        <p id="confirmValidator" className="validator"></p>
-                    </div>
+                    <Row>
+                        <Col lg="12">
+                            <div className="p-3">
+                                <Form onSubmit={(e) => submitHandler(e)}>
+                                    <Row>
+                                        <Col md="12">
+                                            <div className="mb-3">
+                                                <input
+                                                    id="firstname"
+                                                    type="text"
+                                                    placeholder="First Name"
+                                                    className="form-control"
+                                                    required
+                                                />
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md="12">
+                                            <div className="mb-3">
+                                                <input
+                                                    id="lastname"
+                                                    type="text"
+                                                    placeholder="Last Name"
+                                                    className="form-control"
+                                                    required
+                                                />
+                                            </div>
+                                        </Col>
+                                    </Row>
 
-                    <div className="loginFlex mt-5">
-                        <Button outline className="loginBtn" onClick={createNewUser}>Signup</Button>
-                    </div>
-                    <div className="loginFlex">
-                        <p>Already have an Account ? <Link to="/login"><strong>Login</strong></Link></p>
-                    </div>
+                                    <Row>
+
+                                        <Col md="6">
+                                            <div className="mb-3">
+                                                <input
+                                                    id="username"
+                                                    type="text"
+                                                    placeholder="Username"
+                                                    className="form-control"
+                                                    required
+                                                    onBlur={(e) => validation(e)}
+                                                />
+                                                <p id="usernameValidator" className="validator"></p>
+                                            </div>
+                                        </Col>
+                                        <Col md="6">
+                                            <div className="mb-3">
+                                                <input
+                                                    id="email"
+                                                    type="text"
+                                                    placeholder="Email"
+                                                    className="form-control"
+                                                    required
+                                                    onBlur={(e) => validation(e)}
+                                                />
+                                                <p id="emailValidator" className="validator"></p>
+                                            </div>
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col md="6">
+                                            <div className="mb-3">
+                                                <input
+                                                    id="password"
+                                                    type="password"
+                                                    placeholder="Password"
+                                                    className="form-control"
+                                                    required
+                                                />
+                                            </div>
+                                        </Col>
+
+                                        <Col md="6">
+                                            <div className="mb-3">
+                                                <input
+                                                    id="confirmPassword"
+                                                    type="password"
+                                                    placeholder="Confirm Password"
+                                                    className="form-control"
+                                                    required
+                                                    onBlur={(e) => validation(e)}
+                                                />
+                                                <p id="passwordValidator" className="validator"></p>
+                                            </div>
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col lg="12">
+                                            <div className="mb-3">
+
+                                                <Input
+                                                    id="mobile_no"
+                                                    type="number"
+                                                    placeholder="Mobile no"
+                                                    className="form-control"
+                                                    required
+                                                    onBlur={(e) => validation(e)}
+                                                />
+                                                <p id="mobileValidator" className="validator"></p>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col lg="12">
+                                            <div className="mb-3">
+
+                                                <Input
+                                                    id="cnic"
+                                                    type="number"
+                                                    placeholder="CNIC"
+                                                    className="form-control"
+                                                    required
+                                                    onBlur={(e) => validation(e)}
+                                                />
+                                                <p id="cnicValidator" className="validator"></p>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col lg="12">
+                                            <div className="mb-3">
+                                                <Input
+                                                    id="passport"
+                                                    name="passport"
+                                                    type='number'
+                                                    placeholder="Passport"
+                                                    className="form-control"
+                                                    required
+                                                    onBlur={(e) => validation(e)}
+                                                />
+                                                <p id="passportValidator" className="validator"></p>
+                                            </div>
+                                        </Col>
+                                    </Row>
+
+                                    <div className="loginFlex">
+                                        <Button type='submit' outline className="loginBtn">Signup</Button>
+                                    </div>
+                                    <div className="loginFlex">
+                                        <p>Already have an Account ? <Link to="/login"><strong>Login</strong></Link></p>
+                                    </div>
+                                </Form>
+                            </div>
+                        </Col>
+                    </Row >
+                </Col>
+
+                <Col md="6">
+                    <img src="/loginImg.svg" alt="login" className="loginImg"></img>
                 </Col>
             </Row>
         </div>
