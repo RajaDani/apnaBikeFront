@@ -15,7 +15,7 @@ export default function MiddlePart() {
 
     return (
         <>
-            <div className="bodyBackground" style={{ backgroundImage: 'url(bgibike.jpg)' }}>
+            <div className="bodyBackground" style={{ backgroundImage: 'url(bgibike.jpg)', overflow: 'hidden' }}>
                 <Row>
                     <Col md="7" lg="6" >
                         <img src="middle.png" alt="icon"></img>
@@ -30,7 +30,7 @@ export default function MiddlePart() {
                     </Col>
                 </Row>
             </div >
-            <div className="container">
+            <div className="container dateSelector">
                 <DateTimePicker />
             </div>
         </>

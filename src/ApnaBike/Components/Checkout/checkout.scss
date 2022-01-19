@@ -1,89 +1,86 @@
-$font : Montserrat , sans-serif ;
+$font: Montserrat, sans-serif;
 
 .billInfoCheckout {
+  font-family: $font;
+  h4 {
+    text-align: left;
+    font-size: 19px;
+    padding: 5px;
+    margin-top: 10px;
+  }
+  h5 {
+    text-align: center;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
     font-family: $font;
-    h4{
-        text-align: left ;
-        font-size: 19px;
-        padding: 5px;
-    }
-    h5 {
-        text-align: center;
-        padding-bottom: 20px;
-        margin-bottom: 20px;
-        font-weight: bold;
-        font-family: $font;
-        margin-top: 20px;
-        border-bottom: 1px solid rgb(212, 210, 210);
-    }
-    p{
-        text-align: left;
-        color: 444;
-        margin: 0px !important;
-    }
-    input {
-        margin-top: 5px;
-        height: 45px;
-    }
+    margin-top: 20px;
+    border-bottom: 1px solid rgb(212, 210, 210);
+  }
+  p {
+    text-align: left;
+    color: 444;
+    margin: 0px !important;
+  }
+  input {
+    margin-top: 5px;
+    height: 45px;
+  }
 
-    button {
-        width: 60%;
-        padding: 15px;
-        color: #fff;
-        background-color: rgb(250, 164, 6);
-        float: right;
-        margin-top: 30px;
-    }
-   
+  button {
+    width: 60%;
+    padding: 15px;
+    color: #fff;
+    background-color: rgb(250, 164, 6);
+    float: right;
+    margin-top: 30px;
+  }
 }
 
 strong {
-    color: #444;
-    text-align: right;
+  color: #444;
+  text-align: right;
 }
 
 .infoSummary {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 
-    div {
-        display: flex;
-        justify-content: space-between;
-        // align-items: center;
-        border-bottom: 1px solid rgb(212, 210, 210);
-        padding: 10px;
-        margin: 10px;
-    }
-   
+  div {
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    border-bottom: 1px solid rgb(212, 210, 210);
+    padding: 10px;
+    margin: 10px;
+  }
 }
 
 .productDetails {
-    margin-left: 20px !important; 
+  margin-left: 20px !important;
 }
 
 .paymentMethod {
-    margin-top: -10px !important;
-    display: flex;
-    justify-content: left !important;
+  margin-top: -5px !important;
+  display: flex;
+  justify-content: left !important;
 
-    label{
-        margin-left: 8px;
-        padding-top: 10px;
-    }
+  label {
+    margin-left: 8px;
+    padding-top: 15px;
+  }
 }
 
 .description {
+  margin-top: -20px !important;
+  padding-bottom: 0px !important;
 
-    margin-top: -20px !important;
-    padding-bottom:0px !important;
-    
-    p{
-        color: #444;
-        opacity: 0.9;
-        font-size: 14px;
-        margin-left: -40px !important;  
-        
-    }
-    div {
-        border-bottom: 0px;
-    }
+  p {
+    color: #444;
+    opacity: 0.9;
+    font-size: 14px;
+    margin-left: -40px !important;
+  }
+  div {
+    border-bottom: 0px;
+  }
 }

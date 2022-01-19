@@ -1,19 +1,23 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import React from "react";
 import { Col, Card, CardBody } from "reactstrap";
-import CountUp from 'react-countup';
+import CountUp from "react-countup";
 import ReactApexChart from "react-apexcharts";
 
-const MiniWidget = props => {
-
-
+const MiniWidget = (props) => {
   return (
     <React.Fragment>
       {props.reports.map((report, key) => (
-        <Col md={6} xl={3} key={key} >
-          <Card style={{ height: '130px', backgroundColor: 'white' }}>
-            <CardBody >
-              <div className="float-right" >
+        <Col md={6} xl={3} key={key}>
+          <Card
+            style={{
+              height: "130px",
+              backgroundColor: "white",
+              marginBottom: "10px",
+            }}
+          >
+            <CardBody>
+              <div className="float-right">
                 <ReactApexChart
                   options={report.options}
                   series={report.series}
@@ -23,10 +27,25 @@ const MiniWidget = props => {
                 />
               </div>
               <div>
-                <h4 className="mb-1 "><span><CountUp end={report.value} separator="," prefix={report.prefix} suffix={report.suffix} decimals={report.decimal} /></span></h4>
+                <h4 className="mb-1 ">
+                  <span>
+                    <CountUp
+                      end={report.value}
+                      separator=","
+                      prefix={report.prefix}
+                      suffix={report.suffix}
+                      decimals={report.decimal}
+                    />
+                  </span>
+                </h4>
                 <p className="text-muted mt-1 mb-0">{report.title}</p>
               </div>
-              <p className="text-muted mt-3   mb-1"><span className={"text-" + report.color + " me-1"}><i className={report.icon + " me-1"}></i>{report.badgeValue}</span>{" "}{report.desc}
+              <p className="text-muted mt-3   mb-1">
+                <span className={"text-" + report.color + " me-1"}>
+                  <i className={report.icon + " me-1"}></i>
+                  {report.badgeValue}
+                </span>{" "}
+                {report.desc}
               </p>
             </CardBody>
           </Card>
@@ -39,5 +58,5 @@ const MiniWidget = props => {
 export default MiniWidget;
 
 MiniWidget.propTypes = {
-  reports: PropTypes.array
+  reports: PropTypes.array,
 };
