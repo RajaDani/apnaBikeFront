@@ -1,12 +1,13 @@
 import React from "react";
 import ApnaBikeUi from "./ApnaBike/ApnaBikeUi";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.scss";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path='/'>
+        <Route path="/">
           <ApnaBikeUi />
         </Route>
       </Switch>

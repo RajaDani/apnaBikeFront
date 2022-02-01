@@ -3,6 +3,7 @@ import { Button, Col, Row } from "reactstrap";
 import "./middle.scss";
 import { BaseUrl } from "../../BaseUrl";
 import { useHistory } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function DateTimePicker() {
   const [city, setcity] = useState([]);
@@ -27,13 +28,25 @@ export default function DateTimePicker() {
     var dropoff = document.getElementById("dropOffDate").value;
     var city = document.getElementById("citySelect").value;
 
-    sessionStorage.setItem("pickup", pickUpDate);
-    sessionStorage.setItem("dropoff", dropoff);
-    sessionStorage.setItem("city", city);
-
-    history.push(
-      `/availablebikes/pickUpDate=${pickUpDate}/dropoff=${dropoff}/city=${city}`
+    var difference = Math.floor(
+      (Date.parse(dropoff) - Date.parse(pickUpDate)) / 86400000 + 1
     );
+
+    if (difference <= 0) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Dates are not correct",
+      });
+    } else {
+      sessionStorage.setItem("pickup", pickUpDate);
+      sessionStorage.setItem("dropoff", dropoff);
+      sessionStorage.setItem("city", city);
+
+      history.push(
+        `/availablebikes/pickUpDate=${pickUpDate}/dropoff=${dropoff}/city=${city}`
+      );
+    }
   };
 
   useEffect(() => {

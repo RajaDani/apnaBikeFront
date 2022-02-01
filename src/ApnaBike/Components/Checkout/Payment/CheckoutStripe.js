@@ -86,7 +86,7 @@ export default function CheckoutForm({ paymentConfirmation, total }) {
         </div>
         <img src="../new.png" className="paymentCardImg mt-5 ml-5 "></img>
       </Col>
-      <Col md="1" sm="0">
+      <Col md="1" sm="0" className="marginCol">
         <div className="marginLine"></div>
       </Col>
       <Col md="5" className="paymentCardForm ">

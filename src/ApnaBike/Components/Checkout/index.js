@@ -10,22 +10,37 @@ export default function Checkout(props) {
   const history = useHistory();
 
   const [stripePayment, setstripePayment] = useState(false);
+  const [propsParameters, setpropsParameters] = useState({
+    subtotal: "",
+    helmet: "",
+    bike: "",
+    total: "",
+  });
 
-  let subtotal = history.location.state.subTotal;
-  let helmet = history.location.state.helmet;
-  let bike = history.location.state.bikeDetail;
-  let total = parseInt(subtotal) + parseInt(helmet);
   useEffect(() => {
     if (
+      !history.location.state ||
       !sessionStorage.getItem("pickup") ||
       !sessionStorage.getItem("dropoff") ||
       !sessionStorage.getItem("city")
     ) {
-      history.replace("/home");
+      history.replace("/404");
+    } else {
+      setpropsParameters({
+        ...propsParameters,
+        subtotal: history.location.state.subTotal,
+        helmet: history.location.state.helmet,
+        bike: history.location.state.bikeDetail,
+        total:
+          parseInt(history.location.state.subTotal) +
+          parseInt(history.location.state.helmet),
+      });
     }
   }, []);
 
-  const [bikeDetail, setbikeDetail] = useState([bike]);
+  const [bikeDetail, setbikeDetail] = useState([
+    history.location.state.bikeDetail,
+  ]);
   const [mapModal, setmapModal] = useState(false);
   const [delivery, setdelivery] = useState();
   const [viewports, setviewports] = useState({
@@ -54,9 +69,9 @@ export default function Checkout(props) {
           book_till: book_till,
           userId: userId,
           city: city,
-          total: total,
-          subtotal: subtotal,
-          helmet: helmet,
+          total: propsParameters.total,
+          subtotal: propsParameters.subtotal,
+          helmet: propsParameters.helmet,
           delivery: delivery,
           longitude: viewports.longitude,
           latitude: viewports.latitude,
@@ -104,12 +119,15 @@ export default function Checkout(props) {
       {stripePayment === true ? (
         <Stripe />
       ) : (
-        <div className="container billInfoCheckout pl-t mt-5 mb-5 pb-5">
-          <h4>BILLING DETAILS</h4>
-
-          <Row className="mt-3">
+        <div className="container billInfoCheckout pl-1 mb-5 pb-5">
+          <Row className="checkoutRow">
             <Col md="8">
-              <Form onSubmit={(e) => ProceedToPayment(e)}>
+              <h3 style={{ textAlign: "left" }}>BILLING DETAILS</h3>
+
+              <Form
+                onSubmit={(e) => ProceedToPayment(e)}
+                style={{ padding: "10px" }}
+              >
                 <FormGroup>
                   <label>First Name</label>
                   <br />
@@ -180,17 +198,17 @@ export default function Checkout(props) {
                       <p>City : {sessionStorage.getItem("city")}</p>
                     </div>
                     <div style={{ marginRight: "-10px" }}>
-                      <strong>Rs.{subtotal}</strong>
+                      <strong>Rs.{propsParameters.subtotal}</strong>
                     </div>
                   </div>
                   <div>
                     <h6>Helmets</h6>
-                    <strong>Rs.{helmet}</strong>
+                    <strong>Rs.{propsParameters.helmet}</strong>
                   </div>
 
                   <div>
                     <h6>TOTAL</h6>
-                    <strong>Rs.{total}</strong>
+                    <strong>Rs.{propsParameters.total}</strong>
                   </div>
 
                   <h4 className="ml-1 mt-3 mb-1">CHOOSE DELIVERY</h4>

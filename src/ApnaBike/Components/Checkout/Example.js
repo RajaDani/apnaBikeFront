@@ -6,6 +6,7 @@ import MapGL from "react-map-gl";
 import { Marker } from "react-map-gl";
 import Geocoder from "react-map-gl-geocoder";
 import ReactMapGL, { GeolocateControl } from "react-map-gl";
+import "./checkout.scss";
 
 const MAPBOX_TOKEN =
   "pk.eyJ1IjoiaWFtZGV2ZWxvcGVyODg5IiwiYSI6ImNreHU4c2diMzZsOWEyd3J5MGtpcWJ2ZGUifQ.Pg2tHt2XWkrO6As17w7RDA";
@@ -58,7 +59,10 @@ const Example = (props) => {
   }
 
   return (
-    <div style={{ height: "85vh", width: "80vw", marginLeft: "-300px" }}>
+    <div
+      className="mapModalSmall"
+      style={{ height: "85vh", width: "80vw", marginLeft: "-300px" }}
+    >
       <MapGL
         ref={mapRef}
         {...viewport}
@@ -68,7 +72,7 @@ const Example = (props) => {
         mapboxApiAccessToken={MAPBOX_TOKEN}
       >
         <Button
-          className="btn btn-primary m-2"
+          className="btn btn-primary locationBtn"
           style={{ color: "white" }}
           onClick={() => getLocation()}
           outline

@@ -1,40 +1,33 @@
-$font : Montserrat , sans-serif ;
-
 .whyusComp {
-   .whyusImgDiv {
-       display: flex;
-       justify-content: center;
-       margin-bottom: 40px;
-   }
-   h4 {
-       font-family : $font !important  ;
-       font-weight: 800;
-       text-align: center;
-   }
+  .whyusImgDiv {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  h4 {
+    font-weight: 800;
+    text-align: center;
+  }
 }
 
 .ideaContainer {
-    img {
-        width: 100%;
-    }
-    h1 {
-        font-weight: 800;
-        font-family: $font;
-    }
-    h4 {
-        font-weight: 800;
-        font-family: $font;
-        margin-bottom: 20px;
-    }
-    p{
-        text-align: left;
-    }
+  img {
+    width: 100%;
+  }
+  h1 {
+    font-weight: 800;
+  }
+  h4 {
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  p {
+    text-align: left;
+  }
 
-    .whyusHeading {
-        p {
-            text-align: center;
-        }
+  .whyusHeading {
+    p {
+      text-align: center;
     }
+  }
 }
-
-

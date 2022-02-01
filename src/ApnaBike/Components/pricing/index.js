@@ -91,7 +91,6 @@ function Pricing() {
     });
     if (bike.status === 200) {
       let bikeDetail = await bike.json();
-      console.log("bill is =>", bill);
       history.push({
         pathname: "/checkout",
         state: { bikeDetail: bikeDetail, subTotal: bill, helmet: helmet },
@@ -228,10 +227,11 @@ function Pricing() {
                     <div className="helmet">
                       <input
                         type="number"
+                        value={helmet / 200}
                         placeholder="0"
                         min="0"
-                        max="5"
-                        className="form-control"
+                        max="2"
+                        className="form-control mr-2"
                         onChange={(e) => finalBill(e)}
                       />{" "}
                       <strong>Helmet</strong>

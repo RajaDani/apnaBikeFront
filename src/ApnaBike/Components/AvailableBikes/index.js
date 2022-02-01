@@ -48,7 +48,8 @@ export default function AvailableBikes(props) {
           icon: "error",
           title: "Oops...",
           text: "No bikes in These Dates!",
-          footer: '<a href="/home">Go Back Home</a>',
+        }).then(() => {
+          history.push("/home");
         });
       }
     }
@@ -240,9 +241,10 @@ export default function AvailableBikes(props) {
                             <input
                               type="number"
                               placeholder="0"
+                              value={helmet / 200}
                               min="0"
                               max={2}
-                              className="form-control"
+                              className="form-control mr-2"
                               onChange={(e) => finalBill(e)}
                             />{" "}
                             <strong>Helmet</strong>

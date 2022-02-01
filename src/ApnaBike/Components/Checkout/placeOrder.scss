@@ -1,74 +1,82 @@
-$font : Montserrat , sans-serif ;
+$font: Montserrat, sans-serif;
 
 .successIcon {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .checkout {
-    font-family: $font; 
-    i {
-        color: rgb(58, 175, 58);
-    }
-    h4{
-        text-align: center;
-        margin-top: 30px;
-    }
+  font-family: $font;
+  i {
+    color: rgb(58, 175, 58);
+  }
+  h4 {
+    text-align: center;
+    margin-top: 30px;
+  }
 }
 
 .orderSummary {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .orderDetails {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 
 .orderDescription {
-
-    margin-left: auto;
-    margin-right: auto; 
-    div {
-        display: flex;
-        justify-content: space-around;
-        margin: 0px -40px 0px -40px;
-        border-bottom: 1px solid rgb(199, 195, 195);
-        padding: 13px;
-        p{
-            text-align: left !important;
-            font: 15px $font;
-            margin-top: 10px;
-            color: #444444;
-        }
-        strong {
-            margin-top: 10px;
-        }
+  margin-left: auto;
+  margin-right: auto;
+  div {
+    display: flex;
+    justify-content: space-around;
+    margin: 0px -40px 0px -40px;
+    border-bottom: 1px solid rgb(199, 195, 195);
+    padding: 13px;
+    p {
+      text-align: left !important;
+      font: 15px $font;
+      margin-top: 10px;
+      color: #444444;
     }
-
-    h4{
-        margin-bottom: 20px;
-        font: 24px $font;
+    strong {
+      margin-top: 10px;
     }
-    
+  }
+
+  h4 {
+    margin-bottom: 20px;
+    font: 24px $font;
+  }
 }
 .description {
-    display: flex;
-    align-items: center;
-    text-align: left !important;
-    div {
-        float: left !important;
-        border-bottom: 0px;
-    }
+  display: flex;
+  align-items: center;
+  text-align: left !important;
+  div {
+    float: left !important;
+    border-bottom: 0px;
+  }
 }
 
 .productDetails {
-    display: flex;
-    flex-direction: column ;
+  display: flex;
+  flex-direction: column;
 }
 .headingOrder {
-    p{
-        font-weight: bold !important ;
-        font-size: 17px;
+  p {
+    font-weight: bold !important ;
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .orderSummary {
+    strong {
+      margin-top: -15px !important;
+      margin-bottom: 10px;
+      margin-left: -5px;
     }
+  }
 }

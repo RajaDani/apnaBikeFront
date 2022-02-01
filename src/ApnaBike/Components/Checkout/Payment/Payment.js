@@ -99,11 +99,12 @@ export default function Payment() {
 
   useEffect(() => {
     if (
+      !history.location.state ||
       !sessionStorage.getItem("pickup") ||
       !sessionStorage.getItem("dropoff") ||
       !sessionStorage.getItem("city")
     ) {
-      history.replace("/home");
+      history.replace("/404");
     } else {
       fetch(BaseUrl + "client/bikes/create-payment-intent", {
         method: "POST",

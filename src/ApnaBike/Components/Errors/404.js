@@ -1,25 +1,28 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Col, Row, Card } from 'reactstrap'
+import React from "react";
+import { Link } from "react-router-dom";
+import { Col, Row, Card, Button } from "reactstrap";
+import "./error.scss";
 
 export default function Error404() {
-    return (
-        <Row>
-            <Col md="4">
-                <Card>
-                    <div>
-                        <img src="logo.png"></img>
-                    </div>
-                    <h3>Error 404</h3>
-                    <h5>Page not found</h5>
-                    <div>
-                        <Link to="/">Back To HomePage</Link>
-                    </div>
-                </Card>
-            </Col>
-            <Col md="8">
-                <img src="/404.svg" alt="404"></img>
-            </Col>
-        </Row>
-    )
+  return (
+    <Row className="mt-5 ml-5">
+      <Col md="4">
+        <Card className="errorCard ml-5 mt-5">
+          <div>
+            <img src="logo.png"></img>
+          </div>
+          <h4>Error 404</h4>
+          <p>Page not found</p>
+          <div>
+            <Link to="/">
+              <button className="btn mb-5">Back To HomePage</button>
+            </Link>
+          </div>
+        </Card>
+      </Col>
+      <Col md="8">
+        <img src="/404.svg" alt="404"></img>
+      </Col>
+    </Row>
+  );
 }

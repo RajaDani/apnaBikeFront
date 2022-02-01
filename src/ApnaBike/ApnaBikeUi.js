@@ -84,13 +84,11 @@ export default function ApnaBikeUi(props) {
           <Route exact path="/pricing">
             <Header />
             <Pricing />
-            {/* <Scrollbar /> */}
             <Footer />
           </Route>
           <Route exact path="/whyApnaBike">
             <Header />
             <WhyusComponent />
-            {/* <Scrollbar /> */}
             <Footer />
           </Route>
           <Route exact path="/contact">
@@ -133,7 +131,7 @@ export default function ApnaBikeUi(props) {
             <Sidebar />
             <AllBookings />
           </Route>
-          <Route exact path="/Error404">
+          <Route exact path="/404">
             <Error404 />
           </Route>
           <Route exact path="/checkout/payment">

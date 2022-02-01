@@ -64,27 +64,38 @@
       i {
         color: #ffffff;
       }
+      .pricingLink {
+        color: #ffffff;
+      }
     }
   }
 }
 
+.pricingLink {
+  color: #444444;
+  text-decoration: none !important;
+}
+
 @media screen and (max-width: 576px) {
+  .homeRent {
+    padding: 0px !important;
+  }
   .homePrice {
-    width: 90vh !important;
-    margin-left: -90px;
+    width: 100vw !important;
+    margin-left: -55px;
   }
 }
 
-@media screen and (max-width: 400px) {
-  .homePrice {
-    width: 80vh !important;
-    margin-left: -90px;
-  }
-}
+// @media screen and (max-width: 400px) {
+//   .homePrice {
+//     width: 80vh !important;
+//     margin-left: -90px;
+//   }
+// }
 
-@media screen and (max-width: 320px) {
-  .homePrice {
-    width: 75vh !important;
-    margin-left: -100px;
-  }
-}
+// @media screen and (max-width: 320px) {
+//   .homePrice {
+//     width: 75vh !important;
+//     margin-left: -100px;
+//   }
+// }
