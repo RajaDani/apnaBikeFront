@@ -1,2 +1,2 @@
 export const BaseUrl = "http://localhost:3001/";
-// export const BaseUrl = "//0e81-111-119-177-6.ngrok.io/";
+// export const BaseUrl = "http://bae2-119-160-69-129.ngrok.io/";
