@@ -1,6 +1,7 @@
 {
   "name": "apnabike",
   "version": "0.1.0",
+  "homepage": "/apnabike",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
