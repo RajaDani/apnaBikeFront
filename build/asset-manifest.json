@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/apnabike/static/css/main.2e251297.chunk.css",
+    "main.js": "/apnabike/static/js/main.90810762.chunk.js",
+    "main.js.map": "/apnabike/static/js/main.90810762.chunk.js.map",
+    "runtime-main.js": "/apnabike/static/js/runtime-main.41d30555.js",
+    "runtime-main.js.map": "/apnabike/static/js/runtime-main.41d30555.js.map",
+    "static/css/2.638a18e5.chunk.css": "/apnabike/static/css/2.638a18e5.chunk.css",
+    "static/js/2.bffcae8f.chunk.js": "/apnabike/static/js/2.bffcae8f.chunk.js",
+    "static/js/2.bffcae8f.chunk.js.map": "/apnabike/static/js/2.bffcae8f.chunk.js.map",
+    "static/js/3.211c20d6.chunk.js": "/apnabike/static/js/3.211c20d6.chunk.js",
+    "static/js/3.211c20d6.chunk.js.map": "/apnabike/static/js/3.211c20d6.chunk.js.map",
+    "index.html": "/apnabike/index.html",
+    "static/css/2.638a18e5.chunk.css.map": "/apnabike/static/css/2.638a18e5.chunk.css.map",
+    "static/css/main.2e251297.chunk.css.map": "/apnabike/static/css/main.2e251297.chunk.css.map",
+    "static/js/2.bffcae8f.chunk.js.LICENSE.txt": "/apnabike/static/js/2.bffcae8f.chunk.js.LICENSE.txt",
+    "static/media/slick-theme.css": "/apnabike/static/media/slick.c94f7671.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.41d30555.js",
+    "static/css/2.638a18e5.chunk.css",
+    "static/js/2.bffcae8f.chunk.js",
+    "static/css/main.2e251297.chunk.css",
+    "static/js/main.90810762.chunk.js"
+  ]
+}
