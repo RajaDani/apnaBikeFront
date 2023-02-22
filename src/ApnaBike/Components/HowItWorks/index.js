@@ -20,7 +20,7 @@ export default function HowItWorks() {
       data-aos-once="true"
     >
       <span>
-        <img src="/howworks.svg"></img>
+        <img src={process.env.PUBLIC_URL + "/images/howworks.svg"}></img>
       </span>
       <h2 className="headerWork mt-3">It’s Really Easier To Rent</h2>
       <p className="headerPara">
@@ -29,7 +29,10 @@ export default function HowItWorks() {
 
       <Row className=" mt-5 pt-3 mb-5">
         <Col lg="4">
-          <img className="boyImg mb-5" src="/boy.png"></img>
+          <img
+            className="boyImg mb-5"
+            src={process.env.PUBLIC_URL + "/images/boy.png"}
+          ></img>
         </Col>
         <Col lg="8">
           <Row>
@@ -37,7 +40,7 @@ export default function HowItWorks() {
               <div className="howItWork">
                 <div className="howWorkIcon">
                   <img
-                    src="how-it-works-1.svg"
+                    src={process.env.PUBLIC_URL + "/images/how-it-works-1.svg"}
                     className="howImg"
                     alt="howItWorks"
                   ></img>
@@ -56,7 +59,7 @@ export default function HowItWorks() {
               <div className="howItWork">
                 <div className="howWorkIcon">
                   <img
-                    src="how-it-works-2.svg"
+                    src={process.env.PUBLIC_URL + "/images/how-it-works-2.svg"}
                     className="howImg"
                     alt="howItWorks"
                   ></img>
@@ -76,7 +79,7 @@ export default function HowItWorks() {
               <div className="howItWork">
                 <div className="howWorkIcon">
                   <img
-                    src="how-it-works-3.svg"
+                    src={process.env.PUBLIC_URL + "/images/how-it-works-3.svg"}
                     className="howImg"
                     alt="howItWorks"
                   ></img>

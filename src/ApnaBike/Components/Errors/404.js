@@ -9,7 +9,7 @@ export default function Error404() {
       <Col md="4">
         <Card className="errorCard ml-5 mt-5">
           <div>
-            <img src="logo.png"></img>
+            <img src={process.env.PUBLIC_URL + "/images/logo.png"}></img>
           </div>
           <h4>Error 404</h4>
           <p>Page not found</p>
@@ -21,7 +21,7 @@ export default function Error404() {
         </Card>
       </Col>
       <Col md="8">
-        <img src="/404.svg" alt="404"></img>
+        <img src={process.env.PUBLIC_URL + "/images/404.svg"} alt="404"></img>
       </Col>
     </Row>
   );

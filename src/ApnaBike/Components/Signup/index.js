@@ -237,7 +237,7 @@ export default function Signup() {
                 </Col>
 
                 <Col md="6">
-                    <img src="/loginImg.svg" alt="login" className="loginImg"></img>
+                    <img src={process.env.PUBLIC_URL + "/images/loginImg.svg"} alt="login" className="loginImg"></img>
                 </Col>
             </Row>
         </div>

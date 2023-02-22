@@ -82,7 +82,7 @@ export default function HomeRent() {
     >
       <div className="container mt-4">
         <span>
-          <img src="/howworks.svg"></img>
+          <img src={process.env.PUBLIC_URL + "/images/howworks.svg"}></img>
         </span>
         <h2 className="headerWork mt-5">Our Renting Fleet</h2>
         <p className="headerPara">Look at available Bikes for you</p>
@@ -92,7 +92,10 @@ export default function HomeRent() {
               <div className="mb-3 priceCardHeader">
                 <Card className="priceCard">
                   <Row>
-                    <img src="bg1.jpg" alt="bikeImg" />
+                    <img
+                      src={process.env.PUBLIC_URL + "/images/bg1.jpg"}
+                      alt="bikeImg"
+                    />
                   </Row>
                   <p>Model 2018</p>
                   <h4>Honda</h4>
@@ -133,7 +136,10 @@ export default function HomeRent() {
               <div className="mb-3 ">
                 <Card className="priceCard">
                   <Row>
-                    <img src="bg1.jpg" alt="bikeImg" />
+                    <img
+                      src={process.env.PUBLIC_URL + "/images/bg1.jpg"}
+                      alt="bikeImg"
+                    />
                   </Row>
                   <p>Model 2018</p>
                   <h4>Honda</h4>
@@ -174,7 +180,10 @@ export default function HomeRent() {
               <div className="mb-3">
                 <Card className="priceCard">
                   <Row>
-                    <img src="bg1.jpg" alt="bikeImg" />
+                    <img
+                      src={process.env.PUBLIC_URL + "/images/bg1.jpg"}
+                      alt="bikeImg"
+                    />
                   </Row>
                   <p>Model 2018</p>
                   <h4>Honda</h4>
@@ -212,7 +221,10 @@ export default function HomeRent() {
               <div className="mb-3">
                 <Card className="priceCard">
                   <Row>
-                    <img src="bg1.jpg" alt="bikeImg" />
+                    <img
+                      src={process.env.PUBLIC_URL + "/images/bg1.jpg"}
+                      alt="bikeImg"
+                    />
                   </Row>
                   <p>Model 2018</p>
                   <h4>Honda</h4>

@@ -268,9 +268,16 @@ function Pricing() {
     <div className="body" data-aos="zoom-out" data-aos-once="true">
       <div
         className="pricingJumbo"
-        style={{ backgroundImage: "url(bikefleet.jpg)" }}
+        style={{
+          backgroundImage: `url(${
+            process.env.PUBLIC_URL + "/images/bikefleet.jpg"
+          })`,
+        }}
       >
-        <img src="middle2.png" alt="icon"></img>
+        <img
+          src={process.env.PUBLIC_URL + "/images/middle2.png"}
+          alt="icon"
+        ></img>
         <div className="flexItems">
           <h1>OUR PRICES</h1>
           <ol class="breadcrumb">

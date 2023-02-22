@@ -15,7 +15,12 @@ export default function MiddlePart() {
     <>
       <div
         className="bodyBackground"
-        style={{ backgroundImage: "url(bgibike.jpg)", overflow: "hidden" }}
+        style={{
+          backgroundImage: `url(${
+            process.env.PUBLIC_URL + "/images/bgibike.jpg"
+          })`,
+          overflow: "hidden",
+        }}
       >
         <Row>
           <Col
@@ -23,7 +28,10 @@ export default function MiddlePart() {
             lg="6"
             style={{ overflow: "hidden !important", height: "100%" }}
           >
-            <img src="middle.png" alt="icon"></img>
+            <img
+              src={process.env.PUBLIC_URL + "/images/middle.png"}
+              alt="icon"
+            ></img>
             <div className="top-left">
               <h1>
                 Your Bike <br /> When You Need <br /> it Most
@@ -32,7 +40,10 @@ export default function MiddlePart() {
                 <i className="fas fa-biking mr-3" outline></i>Find a Bike
               </button>
               <div className="centered">
-                <img className="rentImg" src="rate.png"></img>
+                <img
+                  className="rentImg"
+                  src={process.env.PUBLIC_URL + "/images/rate.png"}
+                ></img>
                 <p>As Low as </p> <br /> <h3> Rs.500/Day</h3>
               </div>
             </div>

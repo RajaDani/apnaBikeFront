@@ -65,7 +65,12 @@ export default class MobileMenu extends Component {
             onClick={() => this.menuHandler()}
           ></span>
           <div className="d-flex pt-3 pl-3">
-            <img src="/logo.png" alt="" width="65" height="40" />
+            <img
+              src={process.env.PUBLIC_URL + "/images/logo.png"}
+              alt=""
+              width="65"
+              height="40"
+            />
             <p className="mt-2 ml-2">ApnaBike</p>
           </div>
 

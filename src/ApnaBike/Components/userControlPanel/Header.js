@@ -52,7 +52,7 @@ function UserHeader(props) {
                 <span className="logo-sm">
                   <img
                     className="userPanelImg mt-5"
-                    src="/team2.jpg"
+                    src={process.env.PUBLIC_URL + "/images/team2.jpg"}
                     alt=""
                     height="30"
                   />
@@ -77,7 +77,12 @@ function UserHeader(props) {
               <i className="fa fa-fw fa-bars headerBars" />
             </button>
             <div className="container d-flex align-items-center ml-3">
-              <img src="/logo.png" alt="logo" width="60" height="30" />
+              <img
+                src={process.env.PUBLIC_URL + "/images/logo.png"}
+                alt="logo"
+                width="60"
+                height="30"
+              />
               <h4 style={{ marginLeft: "10px" }}>ApnaBike</h4>
             </div>
           </div>

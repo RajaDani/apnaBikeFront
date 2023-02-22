@@ -84,7 +84,10 @@ export default function CheckoutForm({ paymentConfirmation, total }) {
           <h1>ApnaBike</h1>
           <h4>Rs.{total}</h4>
         </div>
-        <img src="../new.png" className="paymentCardImg mt-5 ml-5 "></img>
+        <img
+          src={process.env.PUBLIC_URL + "/images/new.png"}
+          className="paymentCardImg mt-5 ml-5 "
+        ></img>
       </Col>
       <Col md="1" sm="0" className="marginCol">
         <div className="marginLine"></div>
