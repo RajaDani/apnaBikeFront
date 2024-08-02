@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Col, Form, FormGroup, Modal, ModalBody, Row } from "reactstrap";
 import "./checkout.scss";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Stripe from "./Payment/Stripe";
 import Example from "./Example";
 
 export default function Checkout(props) {
-  const history = useHistory();
+  const history = useNavigate();
 
   const [stripePayment, setstripePayment] = useState(false);
   const [propsParameters, setpropsParameters] = useState({
@@ -241,9 +241,9 @@ export default function Checkout(props) {
               ))}
           </Row>
 
-          <Modal isOpen={mapModal} toggle={() => toggleMap()}>
+          {/* <Modal isOpen={mapModal} toggle={() => toggleMap()}>
             <Example mapModalChecker={mapModalChecker} />
-          </Modal>
+          </Modal> */}
         </div>
       )}
     </>

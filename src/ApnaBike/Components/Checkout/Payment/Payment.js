@@ -7,7 +7,7 @@ import "./stripe.scss";
 import { BaseUrl } from "../../../BaseUrl";
 import Footer from "../../footer";
 import Swal from "sweetalert2";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const stripePromise = loadStripe(
   "pk_test_51KDpJHHUGbX5r7qEMDLSsi6TVFlGxjTg2FbHc84qMnS5NkiLt135oBFAPOFWICVR0cFo2Q0W6pWFveShcxv0UOfb00DKIdd8aZ"
@@ -17,7 +17,7 @@ export default function Payment() {
   const [clientSecret, setClientSecret] = useState("");
   const [payment, setpayment] = useState(false);
   const [payment_status, setpayment_status] = useState();
-  const history = useHistory();
+  const history = useNavigate();
 
   async function confirmOrder(payment_method) {
     let auth = localStorage.getItem("token");

@@ -1,15 +1,15 @@
 import { Button, Row, Modal, ModalBody, Form, FormGroup, Input, Card } from 'reactstrap';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './styles.scss';
 import { BaseUrl } from '../../BaseUrl';
-import { Checkbox } from '@material-ui/core';
+import { Checkbox } from '@mui/material';
 
 export default function ModalExample(props) {
 
     const [signinModal, setSigninModal] = useState(false);
     const [signupModal, setSignupModal] = useState(false);
-    const history = useHistory();
+    const history = useNavigate();
     let auth = localStorage.getItem('username');
 
     alert(props.bik);

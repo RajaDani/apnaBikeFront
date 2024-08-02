@@ -4,7 +4,7 @@ import "./style.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import $ from "jquery";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function HowItWorks() {
   useEffect(() => {

@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Row } from "reactstrap";
 import "./middle.scss";
 import { BaseUrl } from "../../BaseUrl";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 export default function DateTimePicker() {
   const [city, setcity] = useState([]);
-  const history = useHistory();
+  const history = useNavigate();
   var difference;
   let date = new Date();
   const minDate =

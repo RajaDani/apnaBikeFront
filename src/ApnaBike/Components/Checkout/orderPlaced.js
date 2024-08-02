@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Button, Col, Row } from "reactstrap";
 import "./placeOrder.scss";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function OrderPlaced() {
-  const history = useHistory();
+  const history = useNavigate();
   const [bike, setbike] = useState(history.location.state.bike);
 
   useEffect(() => {

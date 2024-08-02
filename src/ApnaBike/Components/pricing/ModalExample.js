@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Modal, Row, Col, Card, FormGroup, Input, Button, ModalBody, Form, Breadcrumb, BreadcrumbItem } from 'reactstrap';
-import { Checkbox } from '@material-ui/core';
+import { Checkbox } from '@mui/material';
 
 
 export default function ModalExample(props) {

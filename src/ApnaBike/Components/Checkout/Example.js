@@ -1,10 +1,10 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
-import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
+// import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
 import { Button } from "reactstrap";
 import MapGL from "react-map-gl";
 import { Marker } from "react-map-gl";
-import Geocoder from "react-map-gl-geocoder";
+// import Geocoder from "react-map-gl-geocoder";
 import ReactMapGL, { GeolocateControl } from "react-map-gl";
 import "./checkout.scss";
 
@@ -79,7 +79,7 @@ const Example = (props) => {
         >
           Get my Location
         </Button>
-        <Geocoder
+        {/* <Geocoder
           mapRef={mapRef}
           onViewportChange={handleGeocoderViewportChange}
           mapboxApiAccessToken={MAPBOX_TOKEN}
@@ -88,7 +88,7 @@ const Example = (props) => {
           marker={true}
           countries="PK"
           style="mapbox://styles/mapbox/streets-v9"
-        />
+        /> */}
 
         {marker === true ? (
           <Marker {...viewport} offsetLeft={-20} offsetTop={-10}>

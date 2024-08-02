@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import CounterSection from "./Components/counter";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
 import Pricing from "./Components/pricing";
 import Login from "./Components/login";
 import Location from "./Components/location/location";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import WhyApnaBike from "./Components/Whyus";
 import Signup from "./Components/Signup";
 import ContactPage from "./Components/Contactpage";
@@ -31,114 +30,30 @@ import Sidebar from "./Components/userControlPanel/Sidebar";
 import AllBookings from "./Components/userControlPanel/AllBookings";
 import Stripe from "./Components/Checkout/Payment/Stripe";
 import Payment from "./Components/Checkout/Payment/Payment";
+import { Routes, Route } from "react-router-dom";
 
 export default function ApnaBikeUi(props) {
   return (
-    <Router>
-      <div style={{ overflow: "hidden" }}>
-        <Switch>
-          <Route exact path="/">
-            <Header />
-            <MiddlePart />
-            <HowItWorks />
-            <RentalFeatures />
-            <HomeRent />
-            <WhyApnaBike />
-            <CounterSection />
-            <Experience />
-            <RideWithus />
-            <Location />
-            <Feedback />
-            <Footer />
-          </Route>
-
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/signup">
-            <Signup />
-          </Route>
-          <Route exact path="/home">
-            <Header />
-            <MiddlePart />
-            <HowItWorks />
-            <RentalFeatures />
-            <HomeRent />
-            <WhyApnaBike />
-            <CounterSection />
-            <Experience />
-            <RideWithus />
-            <Location />
-            <Feedback />
-            <Footer />
-          </Route>
-          <Route
-            exact
-            path="/availablebikes/pickUpDate=:pickUpDate/dropoff=:dropoff/city=:city"
-          >
-            <Header />
-            <AvailableBikes />
-            <Scrollbar />
-            <Footer />
-          </Route>
-          <Route exact path="/pricing">
-            <Header />
-            <Pricing />
-            <Footer />
-          </Route>
-          <Route exact path="/whyApnaBike">
-            <Header />
-            <WhyusComponent />
-            <Footer />
-          </Route>
-          <Route exact path="/contact">
-            <Header />
-            <ContactPage />
-            <Footer />
-          </Route>
-          <Route exact path="/aboutus">
-            <Header />
-            <Aboutus />
-            {/* <Scrollbar /> */}
-            <Footer />
-          </Route>
-          <Route exact path="/faq">
-            <Header />
-            <FAQ />
-            <Footer />
-          </Route>
-          <Route exact path="/selectedBike">
-            <Header />
-            <SelectedBike />
-            {/* <Scrollbar /> */}
-            <Footer />
-          </Route>
-          <Route exact path="/checkout">
-            <Header />
-            <Checkout />
-            <Footer />
-          </Route>
-          <Route exact path="/summary">
-            <Header />
-            <OrderPlaced />
-            <Footer />
-          </Route>
-          <Route exact path="/UserPanel/:userId">
-            <MainPage />
-          </Route>
-          <Route exact path="/UserPanel/Allbookings/:userId">
-            <UserHeader />
-            <Sidebar />
-            <AllBookings />
-          </Route>
-          <Route exact path="/404">
-            <Error404 />
-          </Route>
-          <Route exact path="/checkout/payment">
-            <Payment />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <div style={{ overflow: "hidden" }}>
+      <Routes>
+        <Route path="/" element={<><Header /><MiddlePart /><HowItWorks /><RentalFeatures /><HomeRent /><WhyApnaBike /><CounterSection /><Experience /><RideWithus /><Location /><Feedback /><Footer /></>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/home" element={<><Header /><MiddlePart /><HowItWorks /><RentalFeatures /><HomeRent /><WhyApnaBike /><CounterSection /><Experience /><RideWithus /><Location /><Feedback /><Footer /></>} />
+        <Route path="/availablebikes/pickUpDate=:pickUpDate/dropoff=:dropoff/city=:city" element={<><Header /><AvailableBikes /><Scrollbar /><Footer /></>} />
+        <Route path="/pricing" element={<><Header /><Pricing /><Footer /></>} />
+        <Route path="/whyApnaBike" element={<><Header /><WhyusComponent /><Footer /></>} />
+        <Route path="/contact" element={<><Header /><ContactPage /><Footer /></>} />
+        <Route path="/aboutus" element={<><Header /><Aboutus /><Footer /></>} />
+        <Route path="/faq" element={<><Header /><FAQ /><Footer /></>} />
+        <Route path="/selectedBike" element={<><Header /><SelectedBike /><Footer /></>} />
+        <Route path="/checkout" element={<><Header /><Checkout /><Footer /></>} />
+        <Route path="/summary" element={<><Header /><OrderPlaced /><Footer /></>} />
+        <Route path="/UserPanel/:userId" element={<MainPage />} />
+        <Route path="/UserPanel/Allbookings/:userId" element={<><UserHeader /><Sidebar /><AllBookings /></>} />
+        <Route path="/404" element={<Error404 />} />
+        <Route path="/checkout/payment" element={<Payment />} />
+      </Routes>
+    </div>
   );
 }

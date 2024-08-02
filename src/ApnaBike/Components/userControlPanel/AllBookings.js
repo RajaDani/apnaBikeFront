@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { BaseUrl } from '../../BaseUrl';
 import Breadcrumbs from "./Breadcrumb";
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import $ from 'jquery';
 
 export default function AllBookings() {
 
     const [bookings, setbookings] = useState([]);
-    const history = useHistory();
+    const history = useNavigate();
 
     async function getAllBookings() {
         let token = localStorage.getItem('token');

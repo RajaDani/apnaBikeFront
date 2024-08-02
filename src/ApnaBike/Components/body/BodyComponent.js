@@ -3,14 +3,14 @@ import { Row, Col } from "reactstrap";
 import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
 import { Button } from "reactstrap";
 import { BaseUrl } from "../../BaseUrl";
-import { Redirect, useHistory } from "react-router";
+import { Redirect, useNavigate } from "react-router";
 import "./header.css";
 import Header from "../header";
 import AvailableBikes from "../AvailableBikes";
 
 export default function BodyComponent() {
   const [bookedBikes, setbookedBikes] = useState([]);
-  const history = useHistory();
+  const history = useNavigate();
 
   const searchRide = (e) => {
     e.preventDefault();

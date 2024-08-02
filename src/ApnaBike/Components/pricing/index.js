@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./pricing.scss";
 import { BaseUrl } from "../../BaseUrl";
-import { useHistory, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {
   Modal,
   Row,
@@ -15,13 +15,13 @@ import {
   Breadcrumb,
   BreadcrumbItem,
 } from "reactstrap";
-import { Checkbox } from "@material-ui/core";
+import { Checkbox } from "@mui/material";
 import $ from "jquery";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import DateTimePicker from "../MiddlePart/dateTimePicker";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loader from "react-loader-spinner";
+// import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+// import Loader from "react-loader-spinner";
 const md5 = require("md5");
 
 function Pricing() {
@@ -32,8 +32,8 @@ function Pricing() {
   let noOfDays = Math.floor(
     (Date.parse(sessionStorage.getItem("dropoff")) -
       Date.parse(sessionStorage.getItem("pickup"))) /
-      86400000 +
-      1
+    86400000 +
+    1
   );
 
   useEffect(() => {
@@ -42,7 +42,7 @@ function Pricing() {
     });
   }, []);
 
-  let history = useHistory();
+  let history = useNavigate();
   let totalBill;
 
   async function handleSubmit(e) {
@@ -269,9 +269,8 @@ function Pricing() {
       <div
         className="pricingJumbo"
         style={{
-          backgroundImage: `url(${
-            process.env.PUBLIC_URL + "/images/bikefleet.jpg"
-          })`,
+          backgroundImage: `url(${process.env.PUBLIC_URL + "/images/bikefleet.jpg"
+            })`,
         }}
       >
         <img
@@ -295,7 +294,7 @@ function Pricing() {
 
       <DateTimePicker />
       <div className="container mt-5">
-        {function () {
+        {/* {function () {
           while (bikes.length < 1) {
             <Loader
               className="loader"
@@ -303,10 +302,10 @@ function Pricing() {
               color="#00BFFF"
               height={50}
               width={50}
-              // timeout={3000} //3 secs
+            // timeout={3000} //3 secs
             />;
           }
-        }}
+        }} */}
         <div className="row">
           <div className="col-12 ">
             <div className="header">

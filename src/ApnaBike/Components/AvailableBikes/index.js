@@ -9,7 +9,7 @@ import {
   Card,
 } from "reactstrap";
 import { useState, useEffect } from "react";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./styles.scss";
 import { BaseUrl } from "../../BaseUrl";
 import Swal from "sweetalert2";
@@ -20,7 +20,7 @@ export default function AvailableBikes(props) {
   const [bikes, setbikes] = useState([]);
   const [signinModal, setSigninModal] = useState(false);
   const [helmet, setHelmet] = useState(0);
-  const history = useHistory();
+  const history = useNavigate();
 
   let totalBill = 0;
   let { pickUpDate, dropoff, city } = useParams();
@@ -37,7 +37,7 @@ export default function AvailableBikes(props) {
   async function fetchAvailableBikes() {
     let bike = await fetch(
       BaseUrl +
-        `client/bikes/searchbikes?bookedFrom=${pickUpDate}&bookedTill=${dropoff}&city=${city}`
+      `client/bikes/searchbikes?bookedFrom=${pickUpDate}&bookedTill=${dropoff}&city=${city}`
     );
     let availablebikes = await bike.json();
     if (bike.status === 200) {

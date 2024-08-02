@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { BaseUrl } from "../../BaseUrl";
 import { Col, Row, Button, Form } from "reactstrap";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./index.css";
 const md5 = require("md5");
 
 export default function Login() {
   const [authenticate, setauthenticate] = useState({});
 
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();

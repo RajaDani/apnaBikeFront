@@ -6,15 +6,15 @@ import SimpleBar from "simplebar-react"
 
 // MetisMenu
 import MetisMenu from "metismenujs"
-import { withRouter } from "react-router-dom"
-import { Link, useHistory } from "react-router-dom"
+// import { withRouter } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 //i18n
 import { withTranslation } from "react-i18next"
 
 const SidebarContent = props => {
   const ref = useRef();
-  let history = useHistory();
+  let history = useNavigate();
 
   const activateParentDropdown = useCallback((item) => {
     item.classList.add("active")
@@ -136,4 +136,4 @@ SidebarContent.propTypes = {
   t: PropTypes.any,
 }
 
-export default withRouter(withTranslation()(SidebarContent))
+export default SidebarContent

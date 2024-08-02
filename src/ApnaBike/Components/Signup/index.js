@@ -1,13 +1,13 @@
 import React from 'react'
 import { Col, Row, Input, Form, Button } from 'reactstrap'
 import { BaseUrl } from '../../BaseUrl'
-import { useHistory, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import './style.css';
 const md5 = require('md5')
 
 export default function Signup() {
 
-    const history = useHistory();
+    const history = useNavigate();
 
     const validation = (e) => {
         let validator = e.target.value;
