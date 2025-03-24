@@ -6,13 +6,16 @@
 }
 
 $font: Montserrat, sans-serif;
+
 .middle-header {
   background-color: #fff !important;
   opacity: 1;
 }
+
 .navLink {
   color: #444 !important;
 }
+
 #smallHeader {
   z-index: 9999;
 }
@@ -23,6 +26,7 @@ $font: Montserrat, sans-serif;
   justify-content: center;
   overflow: hidden;
 }
+
 .popoverBodySmall {
   width: auto;
 }
@@ -65,6 +69,7 @@ nav ul {
   margin-top: -4px;
   text-align: right;
 }
+
 .brandName {
   text-decoration: none !important;
   font: 18px Montserrat, sans-serif !important;
@@ -72,10 +77,12 @@ nav ul {
   color: #444 !important;
   text-decoration: none;
 }
+
 .brandName:hover {
   color: #08cc7f !important;
 }
-nav > ul > li {
+
+nav>ul>li {
   display: inline-block;
   position: relative;
 }
@@ -97,27 +104,34 @@ nav ul li a:before {
   transition: all 0.3s;
   z-index: -1;
 }
+
 nav ul li a.active:before {
   opacity: 1;
 }
+
 nav ul li a:hover:before {
   opacity: 1;
 }
-nav ul li:hover > ul {
+
+nav ul li:hover>ul {
   opacity: 1;
   visibility: visible;
 }
-nav ul li:hover > ul li {
+
+nav ul li:hover>ul li {
   margin-top: 0;
 }
+
 nav ul li a:hover,
 nav ul li a.active {
   color: #08cc7f !important;
   text-decoration: none;
 }
+
 nav {
   ul {
     padding: 30px;
+
     li {
       margin-left: 20px;
       font: 18px $font !important;
@@ -172,12 +186,14 @@ nav {
 .popover {
   width: auto !important;
 }
+
 .popoverHeader {
   color: #444;
   display: flex;
   justify-content: center;
   overflow: hidden;
 }
+
 .popoverBody {
   width: 250px;
 }
@@ -200,6 +216,7 @@ header.ab.fixed {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding-top: 0;
 }
+
 header.fixed .header-content {
   -webkit-box-shadow: inherit;
   -moz-box-shadow: inherit;
@@ -209,6 +226,7 @@ header.fixed .header-content {
   padding-left: 0;
   padding-right: 0;
 }
+
 .layout3 header.fixed {
   background-color: #0a15a9;
 }
@@ -229,16 +247,20 @@ header.fixed .header-content {
     max-width: 250px;
     // margin-top: 20px;
   }
+
   .btn-success,
   .btn-secondary {
     margin-top: 10px;
   }
+
   .container nav {
     float: left;
   }
+
   .container nav ul li {
     margin-left: -20px !important;
   }
+
   .loginSignup {
     padding: 0px !important;
     margin-left: -20px;
@@ -251,6 +273,7 @@ header.fixed .header-content {
     background: #fff;
     padding-bottom: 20px;
   }
+
   .header-content .contact-info-1 span {
     // margin-right: 20px;
     margin-top: 0;
@@ -261,6 +284,7 @@ header.fixed .header-content {
   .header-content .contact-info-1 span {
     display: none;
   }
+
   .userSmall {
     margin-left: -75px;
     margin-top: 25px;
@@ -272,6 +296,7 @@ header.fixed .header-content {
   display: flex;
   justify-content: flex-end;
 }
+
 .header-style-3 {
   box-shadow: 0px 5px 14.25px 0.75px rgba(12, 105, 184, 0.1);
   position: relative;
@@ -285,6 +310,7 @@ header.fixed .header-content {
     top: 0;
     padding-top: 0;
   }
+
   .userLarge {
     display: none;
   }
@@ -313,6 +339,7 @@ header.fixed .header-content {
     top: 55px;
     right: 15px;
   }
+
   .logo {
     margin-top: 3px !important;
   }
@@ -405,9 +432,11 @@ header.fixed .header-content {
   .header-style-3 .cart-search-contact .mini-cart-content {
     top: 55px;
   }
+
   .popoverBody {
     width: auto !important;
   }
+
   .header-content {
     height: 100px !important;
   }
@@ -439,10 +468,7 @@ header.fixed .header-content {
   border-top: 1px solid #efefef;
 }
 
-.header-style-3
-  .cart-search-contact
-  .mini-cart-content
-  .mini-cart-item:first-child {
+.header-style-3 .cart-search-contact .mini-cart-content .mini-cart-item:first-child {
   padding-top: 0;
   margin-top: 0;
   border-top: 0;
@@ -457,19 +483,17 @@ header.fixed .header-content {
 }
 
 .header-style-3 .cart-search-contact .mini-cart-content .mini-cart-item-image a,
-.header-style-3
-  .cart-search-contact
-  .mini-cart-content
-  .mini-cart-item-image
-  img {
+.header-style-3 .cart-search-contact .mini-cart-content .mini-cart-item-image img {
   display: block;
   width: 46px;
   height: 46px;
 }
+
 .header-style-3 .cart-search-contact .mini-cart-content .mini-cart-item-des {
   position: relative;
   overflow: hidden;
 }
+
 .header-style-3 .cart-search-contact .mini-cart-content .mini-cart-item-des a {
   font-size: 14px;
   font-size: 0.93333rem;
@@ -478,29 +502,19 @@ header.fixed .header-content {
   color: #233d62;
 }
 
-.header-style-3
-  .cart-search-contact
-  .mini-cart-content
-  .mini-cart-item-des
-  a:hover {
+.header-style-3 .cart-search-contact .mini-cart-content .mini-cart-item-des a:hover {
   color: #08cc7f;
 }
-.header-style-3
-  .cart-search-contact
-  .mini-cart-content
-  .mini-cart-item-des
-  .mini-cart-item-price {
+
+.header-style-3 .cart-search-contact .mini-cart-content .mini-cart-item-des .mini-cart-item-price {
   font-size: 13px;
   font-size: 0.86667rem;
   color: #888;
   display: block;
   margin-top: 3px;
 }
-.header-style-3
-  .cart-search-contact
-  .mini-cart-content
-  .mini-cart-item-des
-  .mini-cart-item-quantity {
+
+.header-style-3 .cart-search-contact .mini-cart-content .mini-cart-item-des .mini-cart-item-quantity {
   font-size: 12px;
   font-size: 0.8rem;
   color: #444;
@@ -509,6 +523,7 @@ header.fixed .header-content {
   right: 0;
   top: 2px;
 }
+
 .header-style-3 .cart-search-contact .mini-cart-content .mini-cart-action {
   padding: 20px 0 30px;
   border-top: 1px solid #efefef;
@@ -517,18 +532,12 @@ header.fixed .header-content {
   justify-content: space-between;
   align-items: center;
 }
-.header-style-3
-  .cart-search-contact
-  .mini-cart-content
-  .mini-cart-action
-  .theme-btn-s2 {
+
+.header-style-3 .cart-search-contact .mini-cart-content .mini-cart-action .theme-btn-s2 {
   float: right;
 }
-.header-style-3
-  .cart-search-contact
-  .mini-cart-content
-  .mini-cart-action
-  .mini-checkout-price {
+
+.header-style-3 .cart-search-contact .mini-cart-content .mini-cart-action .mini-checkout-price {
   font-size: 18px;
   font-size: 1.2rem;
   font-weight: 600;
@@ -556,6 +565,7 @@ header.fixed .header-content {
   nav ul ul ul {
     left: -100%;
   }
+
   .popoverBody {
     width: 270px !important;
   }
@@ -568,7 +578,7 @@ header.fixed .header-content {
   }
 }
 
-@media screen and(max-width : 375px) {
+@media screen and (max-width : 375px) {
   .userSmall {
     margin-left: -90px;
     margin-top: 25px;

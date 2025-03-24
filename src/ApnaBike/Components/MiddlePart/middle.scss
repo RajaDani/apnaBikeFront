@@ -7,16 +7,19 @@ $font: Mantserrat, sans-serif;
   height: 100vh;
   background-position: top;
   background-position-y: -100px;
+
   img {
     width: 100%;
     height: 100vh;
   }
+
   h1 {
     font: 60px $font;
     font-weight: bold;
     color: #fff;
     text-align: left;
   }
+
   button {
     float: left;
     font-size: 20px;
@@ -28,6 +31,7 @@ $font: Mantserrat, sans-serif;
     border: 1px solid #fff;
     margin-top: 20px;
   }
+
   button:hover {
     color: rgb(243, 177, 54);
     background-color: #fff;
@@ -52,6 +56,7 @@ $font: Mantserrat, sans-serif;
   width: 45% !important;
   height: 15% !important;
 }
+
 .centered {
   p {
     position: absolute;
@@ -59,6 +64,7 @@ $font: Mantserrat, sans-serif;
     left: 58%;
     font: 19px $font;
   }
+
   h3 {
     position: absolute;
     top: 70%;
@@ -82,27 +88,33 @@ $font: Mantserrat, sans-serif;
     margin-bottom: 30px;
   }
 }
+
 .dateTimeBlock {
   display: flex;
+
   p {
     font-size: 16px;
     color: black;
     font-family: $font;
   }
 }
+
 .form-inline {
   display: flex;
   justify-content: center;
 }
+
 .pickAndDropElement {
   margin-left: 20px;
 }
+
 .calenderPick {
   margin-left: 20px !important;
   border: 0px;
   background-color: #f5f5f8;
   border-bottom: 1px solid rgb(182, 180, 180) !important;
 }
+
 .searchBikeBtn {
   width: 150px;
   margin-left: 30px;
@@ -120,8 +132,10 @@ $font: Mantserrat, sans-serif;
   background-color: rgb(15, 129, 15) !important;
   color: #fff !important;
 }
+
 .citySelect {
   margin-left: 20px;
+
   select {
     width: 200px;
     border: 0px;
@@ -129,6 +143,7 @@ $font: Mantserrat, sans-serif;
     background-color: #f5f5f8;
   }
 }
+
 @media screen and (min-width: 1600px) {
   .bodyBackground {
     background-size: cover;
@@ -137,10 +152,12 @@ $font: Mantserrat, sans-serif;
     height: 70vh;
     background-position: top;
     background-position-y: -200px;
+
     img {
       width: 80%;
       height: 70vh;
     }
+
     h1 {
       font: 80px $font;
       font-weight: bold;
@@ -159,10 +176,12 @@ $font: Mantserrat, sans-serif;
     height: 88vh;
     background-position: top;
     background-position-y: -100px;
+
     img {
       width: 100%;
       height: 88vh;
     }
+
     h1 {
       font: 60px $font;
       font-weight: bold;
@@ -181,10 +200,12 @@ $font: Mantserrat, sans-serif;
     height: 75vh;
     background-position: top;
     background-position-y: -100px;
+
     img {
       width: 100%;
       height: 75vh;
     }
+
     h1 {
       font: 47px $font;
       font-weight: bold;
@@ -193,6 +214,7 @@ $font: Mantserrat, sans-serif;
       margin-bottom: 30px;
     }
   }
+
   .centered {
     p {
       position: absolute;
@@ -200,6 +222,7 @@ $font: Mantserrat, sans-serif;
       left: 60%;
       font: 16px $font;
     }
+
     h3 {
       position: absolute;
       top: 70%;
@@ -208,6 +231,7 @@ $font: Mantserrat, sans-serif;
       font-weight: bold;
     }
   }
+
   .bodyBackground {
     button {
       width: auto;
@@ -216,6 +240,7 @@ $font: Mantserrat, sans-serif;
 
   .citySelect {
     margin-left: 20px;
+
     select {
       width: auto;
       border: 0px;
@@ -239,12 +264,14 @@ $font: Mantserrat, sans-serif;
   .dateTimeBlock {
     display: flex;
     flex-direction: column;
+
     p {
       font-size: 16px;
       color: black;
       font-family: $font;
       margin-top: 10px;
     }
+
     .searchBikeBtn {
       margin-top: 30px;
     }
@@ -257,6 +284,7 @@ $font: Mantserrat, sans-serif;
       left: 60%;
       font: 16px $font;
     }
+
     h3 {
       position: absolute;
       top: 70%;
@@ -265,6 +293,7 @@ $font: Mantserrat, sans-serif;
       font-weight: bold;
     }
   }
+
   .bodyBackground {
     button {
       width: auto;
@@ -274,6 +303,7 @@ $font: Mantserrat, sans-serif;
 
   .citySelect {
     margin-left: 20px;
+
     select {
       width: 97% !important;
       border: 0px;
@@ -294,12 +324,15 @@ $font: Mantserrat, sans-serif;
   .calenderPick {
     width: 85% !important;
   }
+
   .searchBikeBtn {
     width: 80% !important;
   }
+
   .dateTimeBlock {
     margin-top: -10px;
   }
+
   .pickAndDropElement {
     font-weight: bold !important;
     text-decoration: underline;
@@ -307,7 +340,7 @@ $font: Mantserrat, sans-serif;
   }
 }
 
-@media screen and(max-width:950px) {
+@media screen and (max-width: 950px) {
   .bodyBackground {
     background-size: cover;
     background-repeat: no-repeat;
@@ -316,12 +349,14 @@ $font: Mantserrat, sans-serif;
     height: 100% !important;
     overflow: hidden !important;
     background-position: top;
+
     img {
       width: 90%;
       margin-left: -50px;
       height: 100% !important;
       overflow: hidden !important;
     }
+
     .centered {
       p {
         position: absolute;
@@ -329,6 +364,7 @@ $font: Mantserrat, sans-serif;
         left: 62%;
         font: 12px $font;
       }
+
       h3 {
         position: absolute;
         top: 80%;
@@ -336,6 +372,7 @@ $font: Mantserrat, sans-serif;
         font-size: 14px;
         font-weight: bold;
       }
+
       .rentImg {
         width: 110px !important;
         height: 110px !important;
@@ -344,22 +381,26 @@ $font: Mantserrat, sans-serif;
       }
     }
   }
+
   .dateTimeBlock {
     display: flex;
     flex-direction: column;
     width: 100%;
+
     p {
       font-size: 16px;
       color: black;
       font-family: $font;
       margin-top: 10px;
     }
+
     .searchBikeBtn {
       margin-top: 30px;
     }
 
     .citySelect {
       margin-left: 20px;
+
       select {
         width: 100%;
         border: 0px;
@@ -380,12 +421,15 @@ $font: Mantserrat, sans-serif;
     .calenderPick {
       width: 95%;
     }
+
     .searchBikeBtn {
       width: 90%;
     }
+
     .dateTimeBlock {
       margin-top: -10px;
     }
+
     .pickAndDropElement {
       font-weight: bold !important;
       text-decoration: underline;
@@ -394,7 +438,7 @@ $font: Mantserrat, sans-serif;
   }
 }
 
-@media screen and(max-width:578px) {
+@media screen and (max-width:578px) {
   .bodyBackground {
     background-size: cover;
     background-repeat: no-repeat;
@@ -405,6 +449,7 @@ $font: Mantserrat, sans-serif;
     height: 100% !important;
     overflow: hidden !important;
     background-position: top;
+
     img {
       width: 76%;
       margin-left: -50px;
@@ -412,11 +457,13 @@ $font: Mantserrat, sans-serif;
       height: 100% !important;
       overflow: hidden !important;
     }
+
     .findBikeBtn {
       width: 130px !important;
       font-size: 13px;
       margin-bottom: 20px;
     }
+
     .centered {
       p {
         position: absolute;
@@ -424,6 +471,7 @@ $font: Mantserrat, sans-serif;
         left: 62%;
         font: 12px $font;
       }
+
       h3 {
         position: absolute;
         top: 79%;
@@ -431,6 +479,7 @@ $font: Mantserrat, sans-serif;
         font-size: 14px;
         font-weight: bold;
       }
+
       .rentImg {
         width: 100px !important;
         height: 100px !important;
@@ -469,13 +518,13 @@ $font: Mantserrat, sans-serif;
   }
 }
 
-@media screen and(max-width:400px) {
+@media screen and (max-width:400px) {
   .dateSelector {
     margin-top: 44px;
   }
 }
 
-@media screen and(max-width:350px) {
+@media screen and (max-width:350px) {
   .bodyBackground {
     height: 61vh !important;
 
@@ -486,24 +535,30 @@ $font: Mantserrat, sans-serif;
       text-align: left;
       margin-bottom: 30px;
     }
+
     img {
       margin-left: -30px !important;
       height: 57.5vh !important;
       margin-top: -45px;
     }
+
     p {
       top: 66% !important;
       left: 53% !important;
     }
+
     h3 {
       top: 76% !important;
       left: 48% !important;
     }
+
     .findBikeBtn {
       margin-top: 0px;
     }
+
     .centered {
       margin-top: -35px;
+
       .rentImg {
         margin-left: 0px;
       }
@@ -512,6 +567,7 @@ $font: Mantserrat, sans-serif;
 
   .citySelect {
     margin-left: 20px;
+
     select {
       width: 100% !important;
       border: 0px;
@@ -532,6 +588,7 @@ $font: Mantserrat, sans-serif;
   .calenderPick {
     width: 95% !important;
   }
+
   .searchBikeBtn {
     width: 90%;
   }
