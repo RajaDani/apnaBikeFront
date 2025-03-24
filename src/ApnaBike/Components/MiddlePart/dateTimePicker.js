@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 export default function DateTimePicker() {
   const [city, setcity] = useState([]);
   const history = useNavigate();
+
   var difference;
   let date = new Date();
   const minDate =
@@ -43,9 +44,11 @@ export default function DateTimePicker() {
       sessionStorage.setItem("dropoff", dropoff);
       sessionStorage.setItem("city", city);
 
-      history.push(
-        `/availablebikes/pickUpDate=${pickUpDate}/dropoff=${dropoff}/city=${city}`
-      );
+      console.log('====================================');
+      console.log("=====pickUpDate===== ",pickUpDate,dropoff,city);
+      console.log('====================================');
+
+      history("availablebikes",{state:{pickUpDate , dropoff, city}});
     }
   };
 

@@ -100,7 +100,7 @@ export default function BodyComponent() {
 
       {bookedBikes &&
         bookedBikes.length > 0 &&
-        history.push({
+        history({
           pathname: "/availablebikes",
           state: { bikes: bookedBikes },
         })}

@@ -78,7 +78,7 @@ function App() {
           }
         />
         <Route
-          path="/availablebikes/pickUpDate/:pickUpDate/dropoff/:dropoff/city/:city"
+         path="/availablebikes"
           element={
             <>
               <Header />

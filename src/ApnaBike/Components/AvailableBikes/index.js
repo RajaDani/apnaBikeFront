@@ -9,11 +9,12 @@ import {
   Card,
 } from "reactstrap";
 import { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate ,useLocation} from "react-router-dom";
 import "./styles.scss";
 import { BaseUrl } from "../../BaseUrl";
 import Swal from "sweetalert2";
 const md5 = require("md5");
+
 
 export default function AvailableBikes(props) {
   const [bookedBikes, setbookedBikes] = useState([]);
@@ -23,7 +24,8 @@ export default function AvailableBikes(props) {
   const history = useNavigate();
 
   let totalBill = 0;
-  let { pickUpDate, dropoff, city } = useParams();
+  let {state} = useLocation();
+  let {pickUpDate,dropoff,city} = state;
 
   var difference = Math.floor(
     (Date.parse(dropoff) - Date.parse(pickUpDate)) / 86400000 + 1
@@ -49,7 +51,7 @@ export default function AvailableBikes(props) {
           title: "Oops...",
           text: "No bikes in These Dates!",
         }).then(() => {
-          history.push("/home");
+          history("/home");
         });
       }
     }
@@ -101,8 +103,7 @@ export default function AvailableBikes(props) {
     if (bike.status === 200) {
       let bikeDetail = await bike.json();
       console.log(bikeDetail);
-      history.push({
-        pathname: "/checkout",
+      history("/checkout",{
         state: { bikeDetail: bikeDetail, subTotal: bill, helmet: helmet },
       });
     }

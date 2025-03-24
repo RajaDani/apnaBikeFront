@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Col, Form, FormGroup, Modal, ModalBody, Row } from "reactstrap";
 import "./checkout.scss";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import Stripe from "./Payment/Stripe";
 import Example from "./Example";
 
 export default function Checkout(props) {
   const history = useNavigate();
+  const location = useLocation()
+
 
   const [stripePayment, setstripePayment] = useState(false);
   const [propsParameters, setpropsParameters] = useState({
@@ -17,29 +19,33 @@ export default function Checkout(props) {
     total: "",
   });
 
+  console.log('====================================');
+  console.log("=location ==>", location);
+  console.log('====================================');
+
   useEffect(() => {
     if (
-      !history.location.state ||
+      !location?.state ||
       !sessionStorage.getItem("pickup") ||
       !sessionStorage.getItem("dropoff") ||
       !sessionStorage.getItem("city")
     ) {
-      history.replace("/404");
+      history("/404");
     } else {
       setpropsParameters({
         ...propsParameters,
-        subtotal: history.location.state.subTotal,
-        helmet: history.location.state.helmet,
-        bike: history.location.state.bikeDetail,
+        subtotal: location?.state?.subTotal,
+        helmet: location?.state?.helmet,
+        bike: location?.state?.bikeDetail,
         total:
-          parseInt(history.location.state.subTotal) +
-          parseInt(history.location.state.helmet),
+          parseInt(location?.state?.subTotal) +
+          parseInt(location?.state?.helmet),
       });
     }
   }, []);
 
   const [bikeDetail, setbikeDetail] = useState([
-    history.location.state.bikeDetail,
+    location?.state?.bikeDetail,
   ]);
   const [mapModal, setmapModal] = useState(false);
   const [delivery, setdelivery] = useState();
@@ -60,8 +66,7 @@ export default function Checkout(props) {
     let city = sessionStorage.getItem("city").trim();
 
     if (auth && userId && book_from && book_till && city) {
-      history.push({
-        pathname: "/checkout/payment",
+      history("/checkout/payment",{
         state: {
           bikeId: bikeDetail[0].bike_id,
           bike: bikeDetail,
@@ -90,10 +95,10 @@ export default function Checkout(props) {
     }).then((result) => {
       if (result.isConfirmed) {
         localStorage.clear();
-        history.push("/login");
+        history("/login");
       } else {
         localStorage.clear();
-        history.push("/home");
+        history("/home");
       }
     });
   }
@@ -177,7 +182,7 @@ export default function Checkout(props) {
               </Form>
             </Col>
 
-            {history.location.state &&
+            {history?.location?.state &&
               bikeDetail.map((b) => (
                 <Col md="4" className="infoSummary p-3">
                   <h5>Order Summary</h5>

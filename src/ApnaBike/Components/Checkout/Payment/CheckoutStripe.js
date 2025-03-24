@@ -5,10 +5,12 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import { Input, Row, Col } from "reactstrap";
+import {useNavigate} from "react-router-dom"
 
 export default function CheckoutForm({ paymentConfirmation, total }) {
   const stripe = useStripe();
   const elements = useElements();
+  const history = useNavigate()
 
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -76,7 +78,7 @@ export default function CheckoutForm({ paymentConfirmation, total }) {
   return (
     <Row className="ml-5 paymentBox p-5">
       <Col md="5" className="paymentImg">
-        <div className="d-flex">
+        <div className="d-flex" onClick={() => history(-1)}>
           <i className="fas fa-arrow-left p-1 mr-1"></i>
           <p>Back</p>
         </div>

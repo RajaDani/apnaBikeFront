@@ -74,7 +74,7 @@ export default function Signup() {
             localStorage.setItem('username', result.username);
             localStorage.setItem('token', result.token);
             localStorage.setItem('userId', result.userId);
-            history.push("/home");
+            history("/home");
         }
         else alert(result.message);
     }

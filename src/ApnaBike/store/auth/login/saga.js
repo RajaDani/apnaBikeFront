@@ -38,7 +38,7 @@ function* loginUser({ payload: { user, history } }) {
       localStorage.setItem("authUser", JSON.stringify(response))
       yield put(loginSuccess(response))
     }
-    history.push("/dashboard")
+    history("/dashboard")
   } catch (error) {
     yield put(apiError(error))
   }
@@ -52,7 +52,7 @@ function* logoutUser({ payload: { history } }) {
       const response = yield call(fireBaseBackend.logout)
       yield put(logoutUserSuccess(response))
     }
-    history.push("/login")
+    history("/login")
   } catch (error) {
     yield put(apiError(error))
   }
@@ -74,7 +74,7 @@ function* socialLogin({ payload: { data, history, type } }) {
       localStorage.setItem("authUser", JSON.stringify(response))
       yield put(loginSuccess(response))
     }
-    history.push("/dashboard")
+    history("/dashboard")
   } catch (error) {
     yield put(apiError(error))
   }

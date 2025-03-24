@@ -29,7 +29,7 @@ export default function AllBookings() {
             else alert(allBookings.message);
         }
         else {
-            history.push('/home');
+            history('/home');
         }
     }
 

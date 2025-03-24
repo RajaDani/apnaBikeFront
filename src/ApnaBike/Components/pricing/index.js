@@ -91,7 +91,7 @@ function Pricing() {
     });
     if (bike.status === 200) {
       let bikeDetail = await bike.json();
-      history.push({
+      history({
         pathname: "/checkout",
         state: { bikeDetail: bikeDetail, subTotal: bill, helmet: helmet },
       });

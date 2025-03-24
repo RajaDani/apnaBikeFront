@@ -32,7 +32,7 @@ export default function Login() {
       localStorage.setItem("username", result.username);
       localStorage.setItem("token", result.token);
       localStorage.setItem("userId", result.userId);
-      history.push("/home");
+      history("/home");
     } else {
       document.getElementById("errorMsg").innerHTML =
         "Username or password is incorrect!";

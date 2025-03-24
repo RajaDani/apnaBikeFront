@@ -19,7 +19,7 @@ export default function ModalExample(props) {
         else {
             let bike = await fetch(BaseUrl + 'bikes/getbike/' + bik + '');
             let bikeDetail = await bike.json();
-            history.push({ pathname: '/checkout', state: { bikeDetail: bikeDetail } });
+            history({ pathname: '/checkout', state: { bikeDetail: bikeDetail } });
         }
     }
 

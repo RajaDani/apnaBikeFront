@@ -7,7 +7,7 @@ import "./stripe.scss";
 import { BaseUrl } from "../../../BaseUrl";
 import Footer from "../../footer";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const stripePromise = loadStripe(
   "pk_test_51KDpJHHUGbX5r7qEMDLSsi6TVFlGxjTg2FbHc84qMnS5NkiLt135oBFAPOFWICVR0cFo2Q0W6pWFveShcxv0UOfb00DKIdd8aZ"
@@ -18,6 +18,7 @@ export default function Payment() {
   const [payment, setpayment] = useState(false);
   const [payment_status, setpayment_status] = useState();
   const history = useNavigate();
+  const location = useLocation();
 
   async function confirmOrder(payment_method) {
     let auth = localStorage.getItem("token");
@@ -28,34 +29,33 @@ export default function Payment() {
         Authorization: `Bearer ${auth}`,
       },
       body: JSON.stringify({
-        bikeId: history.location.state.bikeId,
-        book_from: history.location.state.book_from,
-        book_till: history.location.state.book_till,
-        userId: history.location.state.userId,
-        city: history.location.state.city,
+        bikeId: location.state.bikeId,
+        book_from: location.state.book_from,
+        book_till: location.state.book_till,
+        userId: location.state.userId,
+        city: location.state.city,
         payment_status: payment_method,
-        total: history.location.state.total,
-        deliveryMethod: history.location.state.delivery,
-        longitude: history.location.state.longitude,
-        latitude: history.location.state.latitude,
+        total: location.state.total,
+        deliveryMethod: location.state.delivery,
+        longitude: location.state.longitude,
+        latitude: location.state.latitude,
       }),
     });
 
     let order = await orderPlaced.json();
     let orderNo = order.booked_bikes_id;
     if (orderPlaced.status === 200) {
-      history.push({
-        pathname: "/summary",
+      history("summary",{
         state: {
-          bike: history.location.state.bike,
-          total: history.location.state.total,
-          subtotal: history.location.state.subtotal,
-          helmet: history.location.state.helmet,
+          bike: location.state.bike,
+          total: location.state.total,
+          subtotal: location.state.subtotal,
+          helmet: location.state.helmet,
           orderDetail: orderNo,
           paymentMethod: order.payment_status,
-          book_from: history.location.state.book_from,
-          book_till: history.location.state.book_till,
-          city: history.location.state.city,
+          book_from: location.state.book_from,
+          book_till: location.state.book_till,
+          city: location.state.city,
         },
       });
     } else if (
@@ -89,17 +89,17 @@ export default function Payment() {
     }).then((result) => {
       if (result.isConfirmed) {
         localStorage.clear();
-        history.push("/login");
+        history("/login");
       } else {
         localStorage.clear();
-        history.push("/home");
+        history("/home");
       }
     });
   }
 
   useEffect(() => {
     if (
-      !history.location.state ||
+      !location.state ||
       !sessionStorage.getItem("pickup") ||
       !sessionStorage.getItem("dropoff") ||
       !sessionStorage.getItem("city")
@@ -109,7 +109,7 @@ export default function Payment() {
       fetch(BaseUrl + "client/bikes/create-payment-intent", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ price: history.location.state.total }),
+        body: JSON.stringify({ price: location.state.total }),
       })
         .then((res) => res.json())
         .then((data) => setClientSecret(data.clientSecret));
@@ -133,7 +133,7 @@ export default function Payment() {
         {clientSecret && (
           <Elements options={options} stripe={stripePromise}>
             <CheckoutForm
-              total={history.location.state.total}
+              total={location.state.total}
               paymentConfirmation={paymentConfirmation}
             />
           </Elements>
