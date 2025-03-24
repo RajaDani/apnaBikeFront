@@ -44,11 +44,7 @@ export default function DateTimePicker() {
       sessionStorage.setItem("dropoff", dropoff);
       sessionStorage.setItem("city", city);
 
-      console.log('====================================');
-      console.log("=====pickUpDate===== ",pickUpDate,dropoff,city);
-      console.log('====================================');
-
-      history("availablebikes",{state:{pickUpDate , dropoff, city}});
+      history("/availablebikes",{state:{pickUpDate , dropoff, city}});
     }
   };
 
